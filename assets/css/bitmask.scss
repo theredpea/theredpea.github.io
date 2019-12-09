@@ -38,6 +38,10 @@ img[src*="headshot"] {
   .bitmask-logo {
     margin: auto;
   }
+  img[src*="headshot"] {
+    float:none;
+    margin:auto;
+  }
 }
 
 /* minima */
@@ -118,10 +122,9 @@ img[src*="headshot"] {
   margin-left: 0;
   list-style: none;
 
-}
-ul {
   padding:0px;
 }
+
 .post-meta {
   font-size: 14px;
   color: #828282;
