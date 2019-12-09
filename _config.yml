@@ -58,8 +58,9 @@ repository: theredpea/theredpea.github.io
 #            ERROR: YOUR SITE COULD NOT BE BUILT:
 #                   ------------------------------------
 #                   No repo name found. Specify using PAGES_REPO_NWO environment variables, 'repository' in your configuration, or set up an 'origin' git remote pointing to your github.com repository.
-github: 
-  repository_url: 'https://github.com/theredpea/theredpea.github.io'
+# https://github.com/mmistakes/minimal-mistakes/issues/1992#issuecomment-453699142
+# github: 
+#   repository_url: 'https://github.com/theredpea/theredpea.github.io'
 # Build settings
 # theme: jekyll-theme-hyde
 # https://help.github.com/en/github/working-with-github-pages/adding-a-theme-to-your-github-pages-site-using-jekyll
