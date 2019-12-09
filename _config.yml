@@ -51,11 +51,14 @@ twitter_username: theredpea
 github_username:  theredpea
 
 # Build settings
-theme: jekyll-theme-hyde
+# theme: jekyll-theme-hyde
+# https://help.github.com/en/github/working-with-github-pages/adding-a-theme-to-your-github-pages-site-using-jekyll
+remote_theme: poole/hyde
 plugins:
-  - jekyll-feed
+  # - jekyll-feed
   # - jekyll-paginate-v2
   - jekyll-paginate
+  - jekyll-remote-theme
 
 # Exclude from processing.
 # The following items will not be processed, by default.
