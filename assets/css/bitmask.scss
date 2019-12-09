@@ -46,6 +46,10 @@ img[src*="headshot"] {
   color: #828282;
 }
 
+.orange {
+  color: #f66a0a;
+}
+
 .contact-list,
 .social-media-list {
   list-style: none;
@@ -121,4 +125,8 @@ ul {
 .post-meta {
   font-size: 14px;
   color: #828282;
+}
+.feed-subscribe .svg-icon {
+  height:16px;
+  width:16px;
 }

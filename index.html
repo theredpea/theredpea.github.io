@@ -3,13 +3,13 @@ layout: default
 title: Home
 pagination: 
   enabled: true
+
 ---
 
 <div class="posts">
-    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
+    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2> 
     <ul class="post-list">
-        {% for post in paginator.posts %}
-        <!-- {%- for post in site.posts -%} -->
+        {%- for post in paginator.posts -%}
         <li>
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         <span class="post-meta">{{ post.date | date: date_format }}</span>
@@ -22,8 +22,7 @@ pagination:
             {{ post.excerpt }}
         {%- endif -%}
         </li>
-        <!-- {%- endfor -%} -->
-        {% endfor %}
+        {%- endfor -%}
     </ul>
 
   <p class="feed-subscribe">
