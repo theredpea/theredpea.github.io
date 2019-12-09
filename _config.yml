@@ -37,6 +37,7 @@ minima:
     facebook: nathaniel.m.anderson
     linkedin: nathaniel-anderson-72702a14
 
+show_excerpts: true
 version: 0.0.1
 title: bitmask
 email: nate.muir.anderson@gmail.com

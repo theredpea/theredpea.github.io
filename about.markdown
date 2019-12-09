@@ -15,7 +15,7 @@ I graduated from the USC where I studied Interactive Media and Accounting.
 
 I'm interested in data-visualization and data science.
 
-Here at bitmask I'll post things like:
+Here at bitmask I'll post about things like:
  - data journalism
  - code experiments
  - learning aids
