@@ -56,6 +56,9 @@ gem "jekyll-theme-hyde"
 
 # Running `bundle update` will rebuild your snapshot from scratch, using only
 # https://github.com/jekyll/jekyll/issues/7630
+# gem "github-pages", ">=203"
+gem 'github-pages', group: :jekyll_plugins
+
 group :jekyll_plugins do
   # gem "jekyll-feed", "~> 0.12"
   # gem "jekyll-paginate-v2"
@@ -77,12 +80,17 @@ group :jekyll_plugins do
 
   # gem "github-pages", ">=203"
 
-  # gem 'jekyll-include-cache'
+#   Remote Theme: Using theme benbalter/retlab
+#   Jekyll Feed: Generating feed for posts
+# Liquid Exception: No repo name found. Specify using PAGES_REPO_NWO environment variables, 'repository' in your configuration, or set up an 'origin' git remote pointing to your github.com repository. in /_layouts/post.html
+#         ERROR: YOUR SITE COULD NOT BE BUILT:
 
-  # gem 'jekyll-seo-tag'
-  # gem 'jekyll-avatar'
-  # gem 'jekyll-github-metadata'
-  # gem 'jekyll-feed'
+  gem 'jekyll-include-cache'
+
+  gem 'jekyll-seo-tag'
+  gem 'jekyll-avatar'
+  gem 'jekyll-github-metadata'
+  gem 'jekyll-feed'
 end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem

@@ -63,6 +63,9 @@ img[src*="headshot"] {
 .social-media-list {
   display: table;
   margin: 0 auto;
+  // 
+  padding: 0px;
+  margin: 0px;
 
   li {
     float: left;
