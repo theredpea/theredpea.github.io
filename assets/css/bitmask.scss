@@ -37,17 +37,6 @@ img[src*="headshot"] {
   float: right;
   margin: 1em;
 }
-@media (max-width: 48em) {
-  .bitmask-logo {
-    margin: auto;
-  }
-
-  img[src*="headshot"] {
-    float: none;
-    margin: auto;
-  }
-}
-
 /* minima */
 
 .grey {
@@ -168,4 +157,25 @@ span.logo-subtitle {
   margin: 0px;
   line-height: 16px;
   opacity:0.5;
+}
+
+
+@media (max-width: 48em) {
+  .bitmask-logo {
+    margin: auto;
+  }
+
+  img[src*="headshot"] {
+    float: none;
+    margin: auto;
+  }
+  .bitmask-logo+a span.logo-subtitle  { 
+
+    text-align: center;
+    padding-right: 0px;
+    margin-bottom: 30px;
+  }  
+  .social-media-list {
+    margin:auto;
+  }
 }
