@@ -45,6 +45,7 @@ tagline: Nate Anderson's site
 email: nate.muir.anderson@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Nate Anderson's site
+# https://github.com/github/pages-gem/issues/460
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: theredpea
