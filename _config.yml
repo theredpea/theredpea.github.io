@@ -53,12 +53,26 @@ github_username:  theredpea
 # Build settings
 # theme: jekyll-theme-hyde
 # https://help.github.com/en/github/working-with-github-pages/adding-a-theme-to-your-github-pages-site-using-jekyll
-remote_theme: poole/hyde
+# Doesnt produce public/css -- publish/css folder into ---> assets/css
+# remote_theme: poole/hyde
+# emp/jekyll-remote-theme-20191209-17492-1h12gk2.zip
+#       Remote Theme: Unzipping C:/Users/there/AppData/Local/Temp/jekyll-remote-theme-20191209-17492-1h12gk2.zip to C:/Users/there/AppData/Local/Temp/jekyll-remote-theme-20191209-17492-8tdfvc
+#          Requiring: github-pages
+#   Dependency Error: Yikes! It looks like you don't have github-pages or one of its dependencies installed. In order to use Jekyll as currently configured, you'll need to install this gem. The full error message from Ruby is: 'cannot load such file -- github-pages' If you run into trouble, you can find helpful resources at https://jekyllrb.com/help/!
+# jekyll 3.8.6 | Error:  github-pages
+
+# NOTE: Inheriting Faraday::Error::ClientError is deprecated; use Faraday::ClientError instead. It will be removed in or after version 1.0
+# Faraday::Error::ClientError.inherited called from C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/octokit-4.14.0/lib/octokit/middleware/follow_redirects.rb:14.
+#   Dependency Error: Yikes! It looks like you don't have jekyll-include-cache or one of its dependencies installed. In order to use Jekyll as currently configured, you'll need to install this gem. The full error message from Ruby is: 'cannot load such file -- jekyll-include-cache' If you run into trouble, you can find helpful resources at https://jekyllrb.com/help/!
+
+remote_theme: benbalter/retlab
 plugins:
   # - jekyll-feed
   # - jekyll-paginate-v2
   - jekyll-paginate
   - jekyll-remote-theme
+  - jekyll-include-cache
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.

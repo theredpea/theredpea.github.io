@@ -37,15 +37,48 @@ gem "jekyll", "~> 3.3"
 # If you have any plugins, put them here!
 
 # https://jekyllrb.com/docs/themes/
-# Or you could list them explicitly as Jekyll plugins in your Gemfile, and not update _config.yml, like this:
+# > Or you could list them explicitly as Jekyll plugins in your Gemfile, and not update _config.yml, like this:
 # this means the config.yml is redundant...?
 
+# Resolving dependencies...
+# Bundler could not find compatible versions for gem "jekyll":
+#   In snapshot (Gemfile.lock):
+#     jekyll (= 3.8.6)
 
+#   In Gemfile:
+#     jekyll (~> 3.3) x64-mingw32
+
+#     github-pages (>= 203) x64-mingw32 was resolved to 203, which depends on
+#       jekyll (= 3.8.5) x64-mingw32
+
+#     jekyll-remote-theme x64-mingw32 was resolved to 0.4.1, which depends on
+#       jekyll (>= 3.5, < 5.0) x64-mingw32
+
+# Running `bundle update` will rebuild your snapshot from scratch, using only
+# https://github.com/jekyll/jekyll/issues/7630
 group :jekyll_plugins do
   # gem "jekyll-feed", "~> 0.12"
   # gem "jekyll-paginate-v2"
   gem "jekyll-paginate"
   gem "jekyll-remote-theme"
+  # https://github.com/github/pages-gem
+  # gem 'github-pages', group: :jekyll_plugins
+  # https://bundler.io/v1.5/groups.html
+  # 
+  # gem 'wirble', :group => :development
+  # https://github.com/github/pages-gem/issues/351#issuecomment-259445262
+  
+  # github-pages x64-mingw32 was resolved to 4, which depends on
+  # jekyll (= 1.1.2) x64-mingw32
+  
+  # github-pages (>= 104) x64-mingw32 was resolved to 104, which depends on
+  # jekyll (= 3.3.0) x64-mingw32
+  # https://rubygems.org/gems/github-pages/versions/202
+
+  gem "github-pages", ">=203"
+
+  gem 'jekyll-include-cache'
+
 end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
