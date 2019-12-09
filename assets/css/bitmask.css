@@ -1,0 +1,23 @@
+.bitmask-logo {
+
+  display: block;
+  width: 120px;
+  height: 120px;
+  background-image: url("/assets/images/logos/bitmask_logo_yellow.svg");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+@media (max-width: 48em) {
+  .bitmask-logo {
+    margin: auto;
+  }
+}
