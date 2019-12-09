@@ -51,7 +51,7 @@ twitter_username: theredpea
 github_username:  theredpea
 
 # Build settings
-# theme: jekyll-theme-hyde
+theme: jekyll-theme-hyde
 # https://help.github.com/en/github/working-with-github-pages/adding-a-theme-to-your-github-pages-site-using-jekyll
 # Doesnt produce public/css -- publish/css folder into ---> assets/css
 # remote_theme: poole/hyde
@@ -65,14 +65,19 @@ github_username:  theredpea
 # Faraday::Error::ClientError.inherited called from C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/octokit-4.14.0/lib/octokit/middleware/follow_redirects.rb:14.
 #   Dependency Error: Yikes! It looks like you don't have jekyll-include-cache or one of its dependencies installed. In order to use Jekyll as currently configured, you'll need to install this gem. The full error message from Ruby is: 'cannot load such file -- jekyll-include-cache' If you run into trouble, you can find helpful resources at https://jekyllrb.com/help/!
 
-remote_theme: benbalter/retlab
+# remote_theme: benbalter/retlab
 plugins:
   # - jekyll-feed
   # - jekyll-paginate-v2
   - jekyll-paginate
   - jekyll-remote-theme
-  - jekyll-include-cache
-
+  # For retlab theme:
+  
+  # - jekyll-include-cache
+  # - jekyll-seo-tag
+  # - jekyll-avatar
+  # - jekyll-github-metadata
+  # - jekyll-feed
 
 # Exclude from processing.
 # The following items will not be processed, by default.

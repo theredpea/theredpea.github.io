@@ -29,7 +29,7 @@ gem "jekyll", "~> 3.3"
 #   jekyll (~> 3.3) x64-mingw32
 
 
-# gem "jekyll-theme-hyde"
+gem "jekyll-theme-hyde"
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
@@ -75,10 +75,14 @@ group :jekyll_plugins do
   # jekyll (= 3.3.0) x64-mingw32
   # https://rubygems.org/gems/github-pages/versions/202
 
-  gem "github-pages", ">=203"
+  # gem "github-pages", ">=203"
 
-  gem 'jekyll-include-cache'
+  # gem 'jekyll-include-cache'
 
+  # gem 'jekyll-seo-tag'
+  # gem 'jekyll-avatar'
+  # gem 'jekyll-github-metadata'
+  # gem 'jekyll-feed'
 end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
