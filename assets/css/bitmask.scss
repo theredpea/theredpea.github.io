@@ -1,14 +1,19 @@
 --- 
 --- 
-
 .bitmask-logo {
 
   display: block;
   width: 120px;
   height: 120px;
-  background-image: url("/assets/images/logos/bitmask_logo_yellow.svg");
+  // background-image: url("/assets/images/logos/bitmask_logo_yellow.svg");
+  background-image: url("/assets/images/logos/bitmask_logo_blue_gradient.svg");
   background-size: 100% auto;
   background-repeat: no-repeat;
+  position:relative;
+  top: 20px;
+  /* transform: translate(-100%, 0); */
+  left: -20px;
+
 }
 
 h1,
@@ -18,10 +23,7 @@ h4,
 h5,
 h6 {
   font-weight: normal;
-  margin:0px;
-  
-  // margin-bottom: 15px;
-  margin-bottom:5px;
+  margin: 0 0 5px;
 }
 
 .lead {
@@ -38,9 +40,10 @@ img[src*="headshot"] {
   .bitmask-logo {
     margin: auto;
   }
+
   img[src*="headshot"] {
-    float:none;
-    margin:auto;
+    float: none;
+    margin: auto;
   }
 }
 
@@ -64,8 +67,9 @@ img[src*="headshot"] {
   display: table;
   margin: 0 auto;
   // 
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 1em;
 
   li {
     float: left;
@@ -108,7 +112,7 @@ img[src*="headshot"] {
 }
 
 .sidebar {
-   .social-media-list {
+  .social-media-list {
     a {
       border: 0;
     }
@@ -125,14 +129,42 @@ img[src*="headshot"] {
   margin-left: 0;
   list-style: none;
 
-  padding:0px;
+  padding: 0;
 }
 
 .post-meta {
   font-size: 14px;
   color: #828282;
 }
+
 .feed-subscribe .svg-icon {
-  height:16px;
-  width:16px;
+  height: 16px;
+  width: 16px;
+}
+
+span.logo-subtitle {
+  font-family: 'PT Sans';
+  font-weight: bolder;
+  font-size: 2rem;
+  display: block;
+  text-align: right;
+  line-height: 10px;
+  padding-right: 30px;
+  // color: dimgrey;
+  color: #4ac1ad;
+}
+
+.sidebar-nav {
+  font-size: 1.25em;
+  margin-bottom:0px;
+}
+.sidebar-disclaimer {
+  /* font-family: 'Abril Fatface'; */
+  font-weight: normal;
+  font-size: 16px;
+  /* letter-spacing: 2px; */
+  text-align: center;
+  margin: 0px;
+  line-height: 16px;
+  opacity:0.5;
 }

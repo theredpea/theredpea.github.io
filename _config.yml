@@ -41,6 +41,7 @@ minima:
 show_excerpts: true
 version: 0.0.1
 title: bitmask
+subtitle: studios
 tagline: Nate Anderson's site
 email: nate.muir.anderson@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
@@ -50,6 +51,11 @@ baseurl: "/" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: theredpea
 github_username:  theredpea
+
+#CNAME record
+# https://support.google.com/domains/answer/9211383?hl=en
+#Subdomain forwarding
+# https://support.google.com/domains/answer/6072198
 
 # https://github.com/jekyll/jekyll/issues/4705#issuecomment-200991736
 repository: theredpea/theredpea.github.io

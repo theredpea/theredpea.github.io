@@ -4,10 +4,11 @@
         <h1>
           <span class="bitmask-logo"></span>
           <a href="{{ site.baseurl }}">
-            {{ site.title }}
+              <span class="logo-title">{{ site.title }}</span>
+            <span class="logo-subtitle">{{ site.subtitle}}</span>
           </a>
         </h1>
-        <p class="lead">{{ site.description }}</p>
+        <!-- <p class="lead">{{ site.description }}</p> -->
       </div>
   
       <nav class="sidebar-nav">
@@ -35,12 +36,17 @@
         <a class="sidebar-nav-item" href="{{ site.github.repo }}">GitHub project</a>
 
          -->
-        <span class="sidebar-nav-item">Currently v{{ site.version }}</span>
+        <!-- <span class="sidebar-nav-item">Currently v{{ site.version }}</span> -->
       </nav>
   
-      <p>&copy; {{ site.time | date: '%Y' }}. All rights reserved.</p>
-      
-{% include social.html %}
+      {% include social.html %}
 
+      <p class="sidebar-disclaimer">
+        &copy; {{ site.time | date: '%Y' }}. All rights reserved.
+      </p>
+      <p class="sidebar-disclaimer">
+        bitmask is run by Nate Anderson
+      </p>
+      
     </div>
   </div>
