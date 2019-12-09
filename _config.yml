@@ -87,6 +87,7 @@ plugins:
   - jekyll-include-cache
   - jekyll-seo-tag
   - jekyll-avatar
+  #  GitHub Metadata: No GitHub API authentication could be found. Some fields may be missing or have incorrect data.
   - jekyll-github-metadata
   - jekyll-feed
 

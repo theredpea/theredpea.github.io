@@ -29,7 +29,8 @@ gem "jekyll", "~> 3.3"
 #   jekyll (~> 3.3) x64-mingw32
 
 
-gem "jekyll-theme-hyde"
+# gem "jekyll-theme-hyde"
+# https://help.github.com/assets/images/help/pages/gemfile-instructions.png
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
