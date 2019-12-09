@@ -94,6 +94,12 @@ group :jekyll_plugins do
   gem 'jekyll-feed'
 end
 
+
+# (base)
+# there@DESKTOP-2OJLD58 MINGW64 /c/git/nate_site (master)
+# $ git pull origin master --allow-unrelated-histories
+# From https://github.com/theredpea/theredpea.github.io
+
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.
 install_if -> { RUBY_PLATFORM =~ %r!mingw|mswin|java! } do
