@@ -41,6 +41,12 @@ based on https://github.com/jekyll/minima/blob/master/_includes/social.html
            title="{{ social.linkedin | escape }}"><svg viewBox="0 0 16 16"  class="svg-icon grey">
                 <use xlink:href="{{ '/assets/minima-social-icons.svg#linkedin' | relative_url }}"></use>
             </svg></a></li>{%- endif -%}
+    {%- if social.stackoverflow -%}<li><a target="_blank"
+           rel="me"
+           href="https://www.stackoverflow.com/users/{{ social.stackoverflow | cgi_escape | escape }}"
+           title="{{ social.stackoverflow | escape }}"><svg viewBox="0 0 16 16"  class="svg-icon grey">
+                <use xlink:href="{{ '/assets/minima-social-icons.svg#stackoverflow' | relative_url }}"></use>
+            </svg></a></li>{%- endif -%}
     {%- if social.pinterest -%}<li><a target="_blank"
            rel="me"
            href="https://www.pinterest.com/{{ social.pinterest | cgi_escape | escape }}"

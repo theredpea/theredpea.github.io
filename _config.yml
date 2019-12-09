@@ -37,6 +37,8 @@ minima:
     github:  theredpea
     facebook: nathaniel.m.anderson
     linkedin: nathaniel-anderson-72702a14
+    # stackoverflow: 1175496/the-red-pea
+    stackoverflow: '1175496'
 
 show_excerpts: true
 version: 0.0.1
