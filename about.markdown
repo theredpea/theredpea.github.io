@@ -4,15 +4,23 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
-
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+![Nate Anderson personal pic](/assets/images/headshot/nate.jpg "Nate Anderson personal pic")
 
 
-[jekyll-organization]: https://github.com/jekyll
+Hi, I'm Nate Anderson. 
+
+I'm a web-developer originally from Kaneohe, Hawaii. I live in Englewood, Colorado with my husband.
+
+I graduated from the USC where I studied Interactive Media and Accounting.
+
+I'm interested in data-visualization and data science.
+
+Here at bitmask I'll post things like:
+ - data journalism
+ - code experiments
+ - learning aids
+ - pics of my dogs
+
+
+ 
+{% include social.html %}
