@@ -20,6 +20,11 @@ Here at bitmask I'll post about things like:
  - pics of my dogs
  - movies, recipes, etc
 
+Hopefully bitmask does better than my previous attempts at a personal page:
+ - [Nate's XBRL site](http://xbrlnexus.appspot.com/#)
+ - [Nate's XBRL Blog](http://xbrlnexus.wordpress.co/)
 
  
+ 
+
 {% include social.html %}

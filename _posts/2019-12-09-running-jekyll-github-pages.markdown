@@ -13,3 +13,4 @@ I just setup a new site and deployed to Github Pages. I ran into a few snags.
 
 Helpful links:
  - [on Google domain to point at github page](https://medium.com/employbl/launch-a-website-with-a-custom-url-using-github-pages-and-google-domains-3dd8d90cc33b)
+  - [correct IP address to mention in `CNAME` file](https://github.com/elm-community/builtwithelm/issues/180#issuecomment-494152040) and [here](https://medium.com/@abidul.rmdn/latest-ip-185-199-108-153-7ada0342e6ad) and [here](https://www.cameronmacleod.com/blog/github-pages-dns); and finally [here](https://help.github.com/en/github/working-with-github-pages/managing-a-custom-domain-for-your-github-pages-site#configuring-a-records-with-your-dns-provider)
