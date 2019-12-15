@@ -24,7 +24,10 @@ Hopefully bitmask does better than my previous attempts at a personal page:
  - [Nate's XBRL site](http://xbrlnexus.appspot.com/#)
  - [Nate's XBRL Blog](http://xbrlnexus.wordpress.co/)
 
- 
+Some inspiration:
+ - Nadie Bremer's site [Visual Cinnamon](https://www.visualcinnamon.com/)
+ - Will Chase's [site](https://www.williamrchase.com/)
+ - Shirley Wu's [site](https://sxywu.com/)
  
 
 {% include social.html %}

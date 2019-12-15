@@ -19,6 +19,9 @@
 # in the templates via {{ site.myvariable }}.
 
 paginate: 5
+# https://stackoverflow.com/a/27016002/1175496
+# > To have pagination work in another page other than your index.html, create a new folder for that page (say, poems/) and change what would have been "poems.html" to "poems/index.html". After that, your "paginate_path" in _config.yml should be 'paginate_path: "poems/page:num/"'.
+paginate_path: "posts/page:num"
 # pagination:
   
 #   # Site-wide kill switch, disabled here it doesn't run at all 

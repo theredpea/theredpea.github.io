@@ -12,5 +12,7 @@ I just setup a new site and deployed to Github Pages. I ran into a few snags.
  - remote theme folder names; must be named `assets`, not `public`; so I [forked the theme (hyde) with this change](https://github.com/theredpea/hyde/commit/8793ad60c82a96be0c4755a2368156782127fb20)
 
 Helpful links:
- - [on Google domain to point at github page](https://medium.com/employbl/launch-a-website-with-a-custom-url-using-github-pages-and-google-domains-3dd8d90cc33b)
+ - [on Google domain to point at github page](https://medium.com/employbl/launch-a-website-with-a-custom-url-using-github-pages-and-google-domains-3dd8d90cc33b) (Although `CNAME` file should just have one item in it?)
+    > Firstly, if you used to be using `A` records then you may need to remove and re-add your custom subdomain from your repository's settings. This will generate you a certificate for your domain. To do this, firstly go to your repository settings...
+    - More info [here](https://github.community/t5/GitHub-Pages/Does-GitHub-Pages-Support-HTTPS-for-www-and-subdomains/td-p/7116)
   - [correct IP address to mention in `CNAME` file](https://github.com/elm-community/builtwithelm/issues/180#issuecomment-494152040) and [here](https://medium.com/@abidul.rmdn/latest-ip-185-199-108-153-7ada0342e6ad) and [here](https://www.cameronmacleod.com/blog/github-pages-dns); and finally [here](https://help.github.com/en/github/working-with-github-pages/managing-a-custom-domain-for-your-github-pages-site#configuring-a-records-with-your-dns-provider)

@@ -1,0 +1,71 @@
+---
+layout: page
+title: Posts
+permalink: /posts/
+---
+
+<!-- 
+
+    https://talk.jekyllrb.com/t/pagination-question-where-does-index-html-go/262
+
+     > Now, open index.html file. If you have index.md instead, then rename it to index.html. Pagination works only on HTML pages. 
+     https://blog.webjeda.com/jekyll-pagination/#use-paginatiorposts
+    
+    > To have pagination work in another page other than your index.html, create a new folder for that page (say, poems/) and change what would have been "poems.html" to "poems/index.html". After that, your "paginate_path" in _config.yml should be 'paginate_path: "poems/page:num/"'.
+    https://stackoverflow.com/a/27016002/1175496
+ -->
+<div class="posts">
+    <!-- <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>  -->
+    <ul class="post-list">
+        {%- for post in paginator.posts -%}
+        <li>
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        <span class="post-meta">{{ post.date | date: date_format }}</span>
+        <h3>
+            <a class="post-link" href="{{ post.url | relative_url }}">
+            {{ post.title | escape }}
+            </a>
+        </h3>
+        {%- if site.show_excerpts -%}
+            {{ post.excerpt }}
+        {%- endif -%}
+        </li>
+        {%- endfor -%}
+    </ul>
+
+  <!-- Will not autogenerate a feed.xml because feed plugin not supported -->
+  <!-- <p class="feed-subscribe">
+    <a href="{{ 'feed.xml' | relative_url }}">
+      <svg class="svg-icon orange"><use xlink:href="{{ 'assets/minima-social-icons.svg#rss' | relative_url }}"></use></svg><span>Subscribe</span>
+    </a>
+  </p> -->
+  
+  <!-- <div class="post">
+    <h1 class="post-title">
+      <a href="{{ post.url }}">
+        {{ post.title }}
+      </a>
+    </h1>
+
+    <span class="post-date">{{ post.date | date_to_string }}</span>
+
+    {{ post.content }}
+  </div> -->
+</div>
+
+<div class="pagination">
+  {% if paginator.next_page %}
+    <a class="pagination-item older" href="{{ site.baseurl }}page{{paginator.next_page}}">Older</a>
+  {% else %}
+    <span class="pagination-item older">Older</span>
+  {% endif %}
+  {% if paginator.previous_page %}
+    {% if paginator.page == 2 %}
+      <a class="pagination-item newer" href="{{ site.baseurl }}">Newer</a>
+    {% else %}
+      <a class="pagination-item newer" href="{{ site.baseurl }}page{{paginator.previous_page}}">Newer</a>
+    {% endif %}
+  {% else %}
+    <span class="pagination-item newer">Newer</span>
+  {% endif %}
+</div>
