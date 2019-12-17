@@ -3,12 +3,22 @@ layout: default
 title: Home
 ---
 
-Hi, I'm Nate Anderson. Welcome to my page.
+<p class="header">
+  Hi, I'm Nate Anderson.
+<!-- </p><p class="header"> -->
+  Welcome to <span class="bitmask-font">bitmask</span>
+  studios
+   <!-- <span class="bitmask-studios-font">studios</span> -->
+  
+</p>
 
 <div class="featured-works-grid">
   {%- for featured_work in site.featured_works -%}
-  <div class="featured-works-grid--featured-work">
-    {{ featured_work.title | escape }}
+  <div class="featured-works-grid--featured-work"
+       style="background-image:url('/assets/images/featured_works/{{featured_work.image}}')">
+    <h3 class="featured-works-grid--featured-title">
+      {{ featured_work.title | escape }}
+    </h3>
   </div>
   {%- endfor -%}
 </div>
