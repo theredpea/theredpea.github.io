@@ -184,11 +184,37 @@ p.header {
   height: 200px;
   margin-right: 20px;
   margin-bottom: 20px;
+  overflow: hidden;
+  position:relative;
   
-    /* background-color: grey; */
-    background-size: 100%;
-    background-repeat: no-repeat;
+}
 
+
+.featured-works-grid--featured-background-image {
+  position:absolute;
+  top:0px;
+  left:0px;
+  bottom:0px;
+  right:0px;
+  /* background-color: grey; */
+  background-size: 200px auto;
+  background-repeat: no-repeat;
+  // opacity:1!important;
+  display:block!important;
+
+  transition: all .5s ease;
+  
+}
+/* [3] Finally, transforming the image when container gets hovered */
+
+.featured-works-grid--featured-work:hover {
+  .featured-works-grid--featured-background-image  {
+    transform: scale(1.25);
+  }
+
+  .featured-works-grid--featured-title  {
+    background-color:rgba(0, 0, 0, 0.8);
+  }
 }
 
 // width:400px;
@@ -196,8 +222,9 @@ p.header {
   width: 400px;
 }
 .featured-works-grid--featured-title {
+  transition: all .5s ease;
   position: absolute;
-  background-color: #00000073;
+  background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
   height: 2em;
   /* bottom: 0; */
