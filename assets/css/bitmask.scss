@@ -245,6 +245,12 @@ p.header {
     right: 0;
     padding: 10px;
     color: white;
+
+    line-height:18px;
+    font-size:18px;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
 }
