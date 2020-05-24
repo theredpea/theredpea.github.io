@@ -4,9 +4,16 @@ title:  "Running Jekyll + Github Pages"
 date:   2019-12-08 21:44:28 -0700
 excerpt_separator: <!--more-->
 ---
-I just setup a new site and deployed to Github Pages. I ran into a few snags.
+I just setup a new Jekyll site and hosted it using Github Pages and a Google domain. I ran into a few snags.
 <!--more-->
- 
+
+# Ruby and Jekyll: Language and Site Generator 
+I seldom use Ruby, but some of the most common site generators are written in [Ruby](https://jekyllrb.com/docs/installation/), so I explored Jekyll and [Hugo](https://gohugo.io/). I chose Jekyll because I found more examples and more documentation. Jekyll installation would require RubyGems (`gem`) GCC and Make. The had a running site in 3 hours.
+
+# Liquid: Template Language
+ Jekyll uses the Liquid template language. Liquid supports content in [Markdown](https://daringfireball.net/projects/markdown/) and/or HTML -- I find Markdown easier to read and write. Liquid supports template-style features like [objects (`{% raw %} {{ page.title }} {% endraw %}`), tags (`{% raw %}{% if page.show_sidebar %}{% endraw %}`), and filters (`{% raw %}{{ "welcome" | uppercase }}{% endraw %}`)](https://jekyllrb.com/docs/step-by-step/02-liquid/)
+
+## Troubleshooting
  - remote-theme; had to add `repository:` info to the `_config.yml` to satisfy `jekyll-github-metadata` plugin [as described here](https://stackoverflow.com/a/48832099/1175496)
  - errors when I also installed gh-pages; tried to locate a *theme* despite using a `remote_theme`
  - remote theme folder names; must be named `assets`, not `public`; so I [forked the theme (hyde) with this change](https://github.com/theredpea/hyde/commit/8793ad60c82a96be0c4755a2368156782127fb20)
