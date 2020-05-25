@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Running Jekyll + Github Pages"
+title:  "Running Jekyll + Github Pages on a Google domain"
 date:   2019-12-08 21:44:28 -0700
 excerpt_separator: <!--more-->
 ---
