@@ -11,7 +11,7 @@ The basic steps to creating a PWA:
  1. Create a `manifest.json` and reference it in your `index.html` so your PWA can be installed
  1. Create and register a `service-worker.js`  so your PWA is installable
  1. Cache resources and with the `service-worker.js` so your PWA provides a basic offline experience
- 
+  
 
 # Device: Chromebook
 The app should work on a Chromebook. My son uses a Chromebook to play Roblox; Englewood and Denver public school systems arranged for kids to pickup Chromebooks during COVID-19 quarantine. I thought I would be building a "Chrome Extension" or an app for "ChromeOS" -- also known as a "Chrome App". 

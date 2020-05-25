@@ -14,7 +14,7 @@ permalink: /posts/
     > To have pagination work in another page other than your index.html, create a new folder for that page (say, poems/) and change what would have been "poems.html" to "poems/index.html". After that, your "paginate_path" in _config.yml should be 'paginate_path: "poems/page:num/"'.
     https://stackoverflow.com/a/27016002/1175496
  -->
-<div class="posts">
+<div class="posts"> 
     <!-- <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>  -->
     <ul class="post-list">
         {%- for post in paginator.posts -%}

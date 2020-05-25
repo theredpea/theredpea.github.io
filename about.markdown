@@ -28,6 +28,10 @@ Some inspiration:
  - Nadie Bremer's site [Visual Cinnamon](https://www.visualcinnamon.com/)
  - Will Chase's [site](https://www.williamrchase.com/)
  - Shirley Wu's [site](https://sxywu.com/)
- 
+ - Christophe Viau's [site](http://www.biovisualize.com/)
+ - Simon Roger's [site](https://simonrogers.net/)
+ - Nikolay Dudaev's [site](https://nikolaydudaev.com/)
+ - Valentina D'Efilippo's [site](http://www.valentinadefilippo.co.uk/) 
+ - Robert Hodgin's [site]( http://www.roberthodgin.com/)
 
 {% include social.html %}
