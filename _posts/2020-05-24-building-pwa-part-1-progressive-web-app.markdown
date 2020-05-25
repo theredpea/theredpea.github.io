@@ -1,15 +1,16 @@
 ---
 layout: post
-title:  "Building a Progressive Web App (PWA) for my son's Chromebook"
+title:  "Building a PWA for my son's Chromebook; Part 1: Progressive Web Apps"
 date:   2020-05-24 19:57:30 -0700
 excerpt_separator: <!--more-->
 ---
-People always told me I had a "loud voice", and my son's loud callouts during quarantine are also trying the adults in the house. To learn more about volume and intensity, I tried to build a Progressive Web App (PWA). 
+People always told me I had a "loud voice", and my son's loud callouts during quarantine are also trying the adults in the house. To learn more about volume and intensity, I tried to build a Progressive Web App (PWA) that monitors your volume. 
 <!--more-->
 # Summary
 The basic steps to creating a PWA: 
  1. Create a `manifest.json` and reference it in your `index.html` so your PWA can be installed
- 1. Create a service worker  so your PWA provides a basic offline experience
+ 1. Create and register a `service-worker.js`  so your PWA is installable
+ 1. Cache resources and with the `service-worker.js` so your PWA provides a basic offline experience
  
 
 # Device: Chromebook
@@ -80,17 +81,24 @@ Service Workers  have these limitations:
 
  After creating and registering a service worker, we passed this Lighthouse test: `Registers a service worker that controls page and start_url`
 
+## Service Worker Lifecycle
+More in the [Offline Cookbook](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/)
+`install`
+`activate`
+`fetch`
+
+
 # Tutorial: Google CodeLabs and Glitch
 So I followed the [tutorial at Google CodeLabs](https://codelabs.developers.google.com/codelabs/your-first-pwapp/#0) which uses  [Glitch](https://glitch.com/) as a code-editor
 
 # Lighthouse Audit Types and Fixes
 
 
- Type | Error | Fix
-SEO Audit | Document has a meta description. | Add a `<meta name="description">` tag
-Progressive Web App Audit | Current page responds with a 200 when offline. | service-worker handles `fetch` errors
-Progressive Web App Audit | start_url responds with a 200 when offline. | service-worker `.respondsWith()` some content to a `fetch` error
-Progressive Web App Audit | Registers a service worker that controls page and start_url. | `navigator.serviceWorker.register()` a service-worker 
-Progressive Web App Audit | Web app manifest meets the installability requirements. | includes a `manifest.json` linked in the `<link  rel="manifest">`
-Progressive Web App Audit | Configured for a custom splash screen. | `manifest.json` includes splash-screen settings
-Progressive Web App Audit | Sets an address-bar theme color. | `index.html` includes a `<meta name="theme-color" >` tag
+Issue Type | Issue Description | Fix Type | Fix Description
+SEO Audit | Document has a meta description. | index.html | Add a `<meta name="description">` tag
+Progressive Web App Audit | Registers a service worker that controls page and start_url. | index.html and service-worker | `navigator.serviceWorker.register()` a service-worker 
+Progressive Web App Audit | Current page responds with a 200 when offline. | service-worker | service-worker handles `fetch` errors
+Progressive Web App Audit | start_url responds with a 200 when offline. | service-worker | service-worker `.respondsWith()` some content to a `fetch` error
+Progressive Web App Audit | Web app manifest meets the installability requirements. | manifest.json | includes a `manifest.json` linked in the `<link  rel="manifest">`
+Progressive Web App Audit | Configured for a custom splash screen. | manifest.json | `manifest.json` includes splash-screen settings
+Progressive Web App Audit | Sets an address-bar theme color. | index.html | `index.html` includes a `<meta name="theme-color" >` tag
