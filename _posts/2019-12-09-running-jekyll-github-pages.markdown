@@ -4,14 +4,29 @@ title:  "Running Jekyll + Github Pages"
 date:   2019-12-08 21:44:28 -0700
 excerpt_separator: <!--more-->
 ---
-I just setup a new Jekyll site and hosted it using Github Pages and a Google domain. I ran into a few snags.
+I just setup a new Jekyll site and hosted it using Github Pages and a Google domain. I'm happy with the results, so I wanted to explain my process and shed light on a few pitfalls.
 <!--more-->
 
-# Ruby and Jekyll: Language and Site Generator 
-I seldom use Ruby, but some of the most common site generators are written in [Ruby](https://jekyllrb.com/docs/installation/), so I explored Jekyll and [Hugo](https://gohugo.io/). I chose Jekyll because I found more examples and more documentation. Jekyll installation would require RubyGems (`gem`) GCC and Make. The had a running site in 3 hours.
+#  Language and Site Generator : Ruby and Jekyll
+I seldom use Ruby, but some of the most common site generators are written in [Ruby](https://jekyllrb.com/docs/installation/), so I explored Jekyll and [Hugo](https://gohugo.io/). I chose Jekyll because I found more examples and more documentation. Jekyll installation would require RubyGems (`gem`) GCC and Make. I had a jekyll-served site locally in 3 hours, and hosted it on the internet in a few days.
 
-# Liquid: Template Language
+# Template Language: Liquid 
  Jekyll uses the Liquid template language. Liquid supports content in [Markdown](https://daringfireball.net/projects/markdown/) and/or HTML -- I find Markdown easier to read and write. Liquid supports template-style features like [objects (`{% raw %} {{ page.title }} {% endraw %}`), tags (`{% raw %}{% if page.show_sidebar %}{% endraw %}`), and filters (`{% raw %}{{ "welcome" | uppercase }}{% endraw %}`)](https://jekyllrb.com/docs/step-by-step/02-liquid/)
+ With Liquid you can easily refere a page's variables, or a site's collections.
+
+# Content: Pages, Post and Front Matter
+Pages are generic, like any webpage. Posts are more specific and support more specfic metadata like dates, categories and tags.
+
+## Themes
+I created a set of themes based on [Hyde](https://github.com/theredpea/hyde/blob/master/_layouts/default.html)
+
+## Front Matter
+I found "Front Matter" to be especially useful; Front Matter lets you attach properties to your content. 
+ - Front Matter was easy compared to a Python Flask server (where I'd need a database and more server-side programming -- too much work)
+ - Front Matter can be accessed in Liquid, through objects and tags (like `for`-loops)
+
+## Collections
+For defining new "classes" of content, you can create a collection. In my case I wanted to highlight many of my "featured works", so I created a collection called `featured_works`. 
 
 ## Troubleshooting
  - remote-theme; had to add `repository:` info to the `_config.yml` to satisfy `jekyll-github-metadata` plugin [as described here](https://stackoverflow.com/a/48832099/1175496)
