@@ -54,15 +54,26 @@ INSERT PICTURE TO APPLICATION TAB
 Service workers support an offline experience and speeding up performance (network proxy) while still using web's greatest capabilities. 
  According to Lighthouse audit:
 > service worker is the technology that enables your app to use many Progressive Web App features, such as offline, add to homescreen, and push notifications. 
- And [the tutorial](https://codelabs.developers.google.com/codelabs/your-first-pwapp/#4), using service workers...
+
+And according to [the tutorial](https://codelabs.developers.google.com/codelabs/your-first-pwapp/#4), using service workers...
 > ... significantly improves performance because most of our assets (HTML, CSS and JavaScript) will be stored and served locally, eliminating the network as a potential bottleneck.
 
 Service Workers compete with:
 - [AppCache](https://www.html5rocks.com/en/tutorials/appcache/beginner/) on supporting an offline experience
 
+ Service Workers have these features:
+  - "Control" pages
+  - Are Javascript workers
+  - Can use IndexedDB API
+  - Have [a lifecycle](https://developers.google.com/web/fundamentals/primers/service-workers/images/sw-lifecycle.png)
+  - Communicate via events like `fetch` (intercepting network requests) and `message` (communication with main page)
+  - Can [extend events via `waitUntil`](https://developer.mozilla.org/en-US/docs/Web/API/ExtendableEvent/waitUntil) 
+
+
 Service Workers  have these limitations:
  - Cannot access the DOM
- - Cannot expect a global scope
+ - Cannot expect a global state (i.e. in the service-workers' `onfetch` and `onmessage` handlers)
+ - Limited in scope 
 
 ## Service Worker Scope
  > The scope of the service worker determines which files the service worker controls, in other words, from which path the service worker will intercept requests. The default scope is the location of the service worker file, and extends to all directories below
@@ -71,3 +82,15 @@ Service Workers  have these limitations:
 
 # Tutorial: Google CodeLabs and Glitch
 So I followed the [tutorial at Google CodeLabs](https://codelabs.developers.google.com/codelabs/your-first-pwapp/#0) which uses  [Glitch](https://glitch.com/) as a code-editor
+
+# Lighthouse Audit Types and Fixes
+
+
+ Type | Error | Fix
+SEO Audit | Document has a meta description. | Add a `<meta name="description">` tag
+Progressive Web App Audit | Current page responds with a 200 when offline. | service-worker handles `fetch` errors
+Progressive Web App Audit | start_url responds with a 200 when offline. | service-worker `.respondsWith()` some content to a `fetch` error
+Progressive Web App Audit | Registers a service worker that controls page and start_url. | `navigator.serviceWorker.register()` a service-worker 
+Progressive Web App Audit | Web app manifest meets the installability requirements. | includes a `manifest.json` linked in the `<link  rel="manifest">`
+Progressive Web App Audit | Configured for a custom splash screen. | `manifest.json` includes splash-screen settings
+Progressive Web App Audit | Sets an address-bar theme color. | `index.html` includes a `<meta name="theme-color" >` tag
