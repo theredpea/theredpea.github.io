@@ -9,7 +9,7 @@ People always told me I had a "loud voice", and my son's loud callouts during qu
 Inspired by [Nadieh Bremer's use of the Web Audio API](https://twitter.com/NadiehBremer/status/1264215390076403718) and [tutorials on the Web Audio API](https://developers.google.com/web/fundamentals/media/recording-audio)
 
 # Files: Input Element, Capture Attribute
-Can use the `<audio>` element with the  `capture` attribute.
+Can use the `<audio>` element with the  `capture` attribute. This was too simplistic for my needs.
 
 # Stream: Access the Micropohone Interactively
 Calling the `navigator.mediaDevices.getUserMedia()` function prompts the user to [use their microphone.](https://developers.google.com/web/fundamentals/media/recording-audio)
@@ -25,3 +25,7 @@ Example calls:
    - `navigator.mediaDevices.getUserMedia({ audio: true, video: false})`
  - if you know the specific device (after enumerating devices with `navigator.mediaDevices.enumerateDevices:
    - `navigator.mediaDevices.getUserMedia({ audio: { device: devices[0].deviceId }})`
+
+# Processing: Handle the Stream with AUdioContext 
+
+ > The Web Audio API is a simple API that takes input sources and connects those sources to nodes which can process the audio data (adjust Gain etc.) and ultimately to a speaker so that the user can hear it.
