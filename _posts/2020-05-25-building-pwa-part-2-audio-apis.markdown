@@ -26,6 +26,28 @@ Example calls:
  - if you know the specific device (after enumerating devices with `navigator.mediaDevices.enumerateDevices:
    - `navigator.mediaDevices.getUserMedia({ audio: { device: devices[0].deviceId }})`
 
-# Processing: Handle the Stream with AUdioContext 
+# Processing: Handle the Stream with AudioContext 
 
  > The Web Audio API is a simple API that takes input sources and connects those sources to nodes which can process the audio data (adjust Gain etc.) and ultimately to a speaker so that the user can hear it.
+
+# Analyzing: AnalyserNode (British spelling!)
+As seen [in this answer](https://stackoverflow.com/questions/21247571/how-to-get-microphone-input-volume-value-with-web-audio-api)
+ > You can also use an AnalyserNode to do the level detection, and just average out the data, kind of like what the above answer does in getAverageVolume. However, the above answer is NOT a good use of ScriptProcessor - in fact, it's doing no processing of the script node at all, not even passing the data through, it's just using it like a timer callback. You would be FAR better served by using requestAnimationFrame as the visual callback;
+
+The `ScriptProcessor`/`createScriptProcessor` is [deprecated](https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/createScriptProcessor),  but the [`AnalyserNode` is not](https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode)! 
+The `AnalyserNode` helps us:
+TODO: img https://mdn.mozillademos.org/files/12970/fttaudiodata_en.svg
+`AnalyserNode.fftSize`
+
+
+Let's see if we can use the `AnalyserNode`.
+ 
+I continued using Glitch (where I developed the PWA) [to get  the `getAverageVolume` code running](https://glitch.com/edit/#!/citrine-pewter-anteater)...
+
+
+I removed `createScriptProcessor` and the resulting `javascriptNode`. I connected the `AnalyserNode` directly to the `audioContext.destination`; 
+```
+analyser.connect(audioContext.destionation)
+// javascriptNode.connect(audioContext.destination);
+```
+
