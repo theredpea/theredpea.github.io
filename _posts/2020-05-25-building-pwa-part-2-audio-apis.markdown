@@ -51,3 +51,10 @@ analyser.connect(audioContext.destionation)
 // javascriptNode.connect(audioContext.destination);
 ```
 
+TODO: How to throttle requestAnimationFrame / animating
+<!-- https://stackoverflow.com/a/19772220/1175496 
+
+            // https://stackoverflow.com/questions/15871942/how-do-browsers-pause-change-javascript-when-tab-or-window-is-not-active
+            // https://stackoverflow.com/q/15871942/1175496
+            https://stackoverflow.com/questions/15871942/how-do-browsers-pause-change-javascript-when-tab-or-window-is-not-active#comment79562085_16033979
+            -->
