@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "Building a PWA for my son's Chromebook; Part 1: Progressive Web Apps"
+title:  "Building a PWA for a Chromebook; Part 1: Progressive Web Apps"
 date:   2020-05-24 19:57:30 -0700
 excerpt_separator: <!--more-->
 ---
-People always told me I had a "loud voice", and my son's loud callouts during quarantine are also trying the adults in the house. To learn more about volume and intensity, I tried to build a Progressive Web App (PWA) that monitors your volume. 
+People always told me I had a "loud voice", and my foster son's loud callouts during quarantine are also trying the adults in the house. To learn more about volume and intensity, I tried to build a Progressive Web App (PWA) that monitors your volume. 
 <!--more-->
 # Summary
 The basic steps to creating a PWA: 
@@ -14,7 +14,7 @@ The basic steps to creating a PWA:
   
 
 # Device: Chromebook
-The app should work on a Chromebook. My son uses a Chromebook to play Roblox; Englewood and Denver public school systems arranged for kids to pickup Chromebooks during COVID-19 quarantine. I thought I would be building a "Chrome Extension" or an app for "ChromeOS" -- also known as a "Chrome App". 
+The app should work on a Chromebook. My foster son uses a Chromebook to play Roblox; Englewood and Denver public school systems arranged for kids to pickup Chromebooks during COVID-19 quarantine. I thought I would be building a "Chrome Extension" or an app for "ChromeOS" -- also known as a "Chrome App". 
 
 However, [Chrome apps/extensions are deprecated](https://blog.chromium.org/2020/01/moving-forward-from-chrome-apps.html) and the [migration guide suggests PWA's instead](https://developers.chrome.com/apps/migration). PWA's are trying to get the ["best of both worlds"](https://webdev.imgix.net/what-are-pwas/capabilities-reach.svg); the *capabilities* of "Native Apps" and the *reach* of "Web Apps". So I set out to build a PWA.
 

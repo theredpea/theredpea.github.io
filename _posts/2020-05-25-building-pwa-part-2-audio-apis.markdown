@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "Building a PWA for my son's Chromebook; Part 2: Audio API's"
+title:  "Building a PWA for a Chromebook; Part 2: Audio API's"
 date:   2020-05-25 05:57:30 -0700
 excerpt_separator: <!--more-->
 ---
-People always told me I had a "loud voice", and my son's loud callouts during quarantine are also trying the adults in the house. To learn more about volume and intensity, I tried to build a Progressive Web App (PWA) that monitors your volume. 
+People always told me I had a "loud voice", and my foster son's loud callouts during quarantine are also trying the adults in the house. To learn more about volume and intensity, I tried to build a Progressive Web App (PWA) that monitors your volume. 
 <!--more-->  
 Inspired by [Nadieh Bremer's use of the Web Audio API](https://twitter.com/NadiehBremer/status/1264215390076403718) and [tutorials on the Web Audio API](https://developers.google.com/web/fundamentals/media/recording-audio)
 
@@ -39,6 +39,8 @@ The `AnalyserNode` helps us:
 TODO: img https://mdn.mozillademos.org/files/12970/fttaudiodata_en.svg
 `AnalyserNode.fftSize`
 
+# Deploying to Glitch
+Using Git to commit; if you want to code locally and push to your Glitch git repository, [update your Glitch git config like this `git config receive.denyCurrentBranch updateInstead`](https://stackoverflow.com/questions/804545/what-is-this-git-warning-message-when-pushing-changes-to-a-remote-repository/28262104#comment110536444_28262104), [also seen here](https://support.glitch.com/t/possible-to-code-locally-and-push-to-glitch-with-git/2704/9?u=theredpea)
 
 Let's see if we can use the `AnalyserNode`.
  
@@ -52,9 +54,20 @@ analyser.connect(audioContext.destionation)
 ```
 
 TODO: How to throttle requestAnimationFrame / animating
+
+# Visualizing loudness and pitch
+ - A [great article](https://link.springer.com/article/10.3758/s13423-015-0934-0) on visualizing loudness and pitch
+ - Introduction to the concept of the "audio graph" (input nodes, modification nodes, and output nodes) and [WebAudio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+ - How to understand `getTimeDomain` vs `getFrequency` based on this [Stack Overflow question](https://stackoverflow.com/a/63461964/1175496)
 <!-- https://stackoverflow.com/a/19772220/1175496 
 
             // https://stackoverflow.com/questions/15871942/how-do-browsers-pause-change-javascript-when-tab-or-window-is-not-active
             // https://stackoverflow.com/q/15871942/1175496
             https://stackoverflow.com/questions/15871942/how-do-browsers-pause-change-javascript-when-tab-or-window-is-not-active#comment79562085_16033979
+
+
+
+            https://stackoverflow.com/questions/4288253/html5-canvas-100-width-height-of-viewport#comment10499300_4288338
+
+
             -->
