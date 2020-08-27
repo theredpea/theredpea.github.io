@@ -29,6 +29,7 @@ Some inspiration:
  - Will Chase's [site](https://www.williamrchase.com/)
  - Shirley Wu's [site](https://sxywu.com/)
  - Christophe Viau's [site](http://www.biovisualize.com/)
+ - Eugenia Cheng's [site](http://eugeniacheng.com/)
  - Simon Roger's [site](https://simonrogers.net/)
  - Nikolay Dudaev's [site](https://nikolaydudaev.com/)
  - Valentina D'Efilippo's [site](http://www.valentinadefilippo.co.uk/) 

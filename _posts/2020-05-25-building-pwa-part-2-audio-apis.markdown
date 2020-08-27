@@ -13,6 +13,7 @@ Can use the `<audio>` element with the  `capture` attribute. This was too simpli
 
 # Stream: Access the Micropohone Interactively
 Calling the `navigator.mediaDevices.getUserMedia()` function prompts the user to [use their microphone.](https://developers.google.com/web/fundamentals/media/recording-audio)
+Please note the use of `navigator.mediaDevices.getUserMedia()`, which takes 1 argument, and returns a promise vs the [deprecated  `navigator.getUserMedia()`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/getUserMedia), which takes 3 arguments, (the second and third are callback functions).)
 
 The stream can be:
  - attached to an `<audio>` element
@@ -59,6 +60,14 @@ TODO: How to throttle requestAnimationFrame / animating
  - A [great article](https://link.springer.com/article/10.3758/s13423-015-0934-0) on visualizing loudness and pitch
  - Introduction to the concept of the "audio graph" (input nodes, modification nodes, and output nodes) and [WebAudio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
  - How to understand `getTimeDomain` vs `getFrequency` based on this [Stack Overflow question](https://stackoverflow.com/a/63461964/1175496)
+
+
+ # Recording
+ From [Mozilla's documentation](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream_Recording_API):
+  > The MediaStream Recording API is comprised of a single major interface, `MediaRecorder`, which **does all the work of taking the data from a `MediaStream` and delivering it to you for processing**. 
+
+# Measuring Now
+`performance.now()` vs `Date.now()`; the former measures the number of milliseconds since [the "time origin"](https://developer.mozilla.org/en-US/docs/Web/API/DOMHighResTimeStamp#The_time_origin), the latter measures the number of milliseconds since [Jan 1, 1970](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/now)
 <!-- https://stackoverflow.com/a/19772220/1175496 
 
             // https://stackoverflow.com/questions/15871942/how-do-browsers-pause-change-javascript-when-tab-or-window-is-not-active
