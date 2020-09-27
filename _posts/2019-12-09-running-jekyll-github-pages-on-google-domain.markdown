@@ -38,3 +38,9 @@ Helpful links:
     > Firstly, if you used to be using `A` records then you may need to remove and re-add your custom subdomain from your repository's settings. This will generate you a certificate for your domain. To do this, firstly go to your repository settings...
     - More info [here](https://github.community/t5/GitHub-Pages/Does-GitHub-Pages-Support-HTTPS-for-www-and-subdomains/td-p/7116)
   - [correct IP address to mention in `CNAME` file](https://github.com/elm-community/builtwithelm/issues/180#issuecomment-494152040) and [here](https://medium.com/@abidul.rmdn/latest-ip-185-199-108-153-7ada0342e6ad) and [here](https://www.cameronmacleod.com/blog/github-pages-dns); and finally [here](https://help.github.com/en/github/working-with-github-pages/managing-a-custom-domain-for-your-github-pages-site#configuring-a-records-with-your-dns-provider)
+
+## Running
+I use the command `bundle exec jekyll serve`
+
+If I tried just `jekyll serve`, I might get [this error](https://stackoverflow.com/questions/6317980/you-have-already-activated-x-but-your-gemfile-requires-y): 
+> You have already activated i18n 1.7.0, but yourGemfile requires i18n 0.9.5. Prepending `bundle exec` to your command may solvethis. (Gem::LoadError)
