@@ -1,0 +1,15 @@
+{
+    "name": "Teams Modifier",
+    "version": "1.0",
+    "description": "Modify Microsoft Teams meeting to remove distracitons",
+    "permissions": [
+        "storage"
+    ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    },
+    "manifest_version": 2
+}
