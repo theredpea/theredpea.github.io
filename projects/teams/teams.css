@@ -1,0 +1,13 @@
+/* body {
+    background-color:red!important;
+} */
+
+.app-header-bar {
+  /* background-color: #2e31db!important; */
+  background-color: #4f4f4f!important;
+}
+
+#chat-button,
+calling-chat {
+  display: none!important;
+}
