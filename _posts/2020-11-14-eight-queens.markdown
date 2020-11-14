@@ -39,7 +39,7 @@ I didn't understand what this code was doing:
     map(~place_queen(c(queens, .x))) %>%
     keep(~length(.x) > 0) %>%
     flatten()
-```
+``` 
 
 Specifically I didn't understand what the tilde `~` and dot operator `.` were doing in this line: 
 ```
@@ -56,4 +56,12 @@ Turns out the tilde `~` creates a simple lambda function, whose arguments are ac
  >  > For a two argument function, use .x and .y
 
  >  > For more arguments, use ..1, ..2, ..3 etc
+
+
+# Last statement is implicitly returned
+
+I didn't understand how the recursive `place_queen` R function would return a value; I saw a return statement once it found a solution, but I didn't see a return statement at the end of the function, to return the `possible_placements` once finished recursively searching all solutions and flattening them.
+
+I learned that R functions [will automatically return the last statement](https://www.oreilly.com/library/view/the-art-of/9781593273842/ch07s04.html):
+ > You can transmit a value back to the caller by explicitly calling return(). **Without this call, the value of the last executed statement will be returned by default.** For instance, consider the oddcount() example from Chapter 1:
 
