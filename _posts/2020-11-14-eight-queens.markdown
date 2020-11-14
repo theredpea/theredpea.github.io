@@ -27,8 +27,8 @@ The `setdiff` function will only remove items from the *first argument* (`.x`), 
 possible_placements <- setdiff(possible_placements, diags)
 ```
 
-... as described here
- > the elements of setdiff(x,y) are those elements *in x* but not in y.
+... as described [here](https://www.rdocumentation.org/packages/prob/versions/1.0-1/topics/setdiff):
+ > the elements of setdiff(x,y) are **those elements in x but not in y**.
 
 
 # Tilde plus dot
@@ -48,14 +48,10 @@ Specifically I didn't understand what the tilde `~` and dot operator `.` were do
 
 Turns out the tilde `~` creates a simple lambda function, whose arguments are accessed via the dot `.`, as explained [here](https://stackoverflow.com/a/53160041/1175496):
  > As MrFlick pointed out, these are two separate operators. Together, they provide a special mechanism that allows tidyverse packages to construct lambda functions on the fly. This is best described in ?purrr::as_mapper. Specifically,
-
  >  > If a formula, e.g. ~ .x + 2, it is converted to a function. There are three ways to refer to the arguments:
-
- >  > For a single argument function, use .
-
- >  > For a two argument function, use .x and .y
-
- >  > For more arguments, use ..1, ..2, ..3 etc
+ >  > 1. For a single argument function, use `.`
+ >  > 1. For a two argument function, use `.x` and `.y`
+ >  > 1. For more arguments, use `..1`, `..2`, `..3` etc
 
 
 # Last statement is implicitly returned

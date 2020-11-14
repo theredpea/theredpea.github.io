@@ -1,8 +1,9 @@
 ---
 layout: page
 title: Posts
-permalink: /posts/
 ---
+<!-- Remove permalink from *this posts* front matter! -->
+<!-- permalink: /posts/ -->
 
 <!-- 
 
@@ -14,24 +15,36 @@ permalink: /posts/
     > To have pagination work in another page other than your index.html, create a new folder for that page (say, poems/) and change what would have been "poems.html" to "poems/index.html". After that, your "paginate_path" in _config.yml should be 'paginate_path: "poems/page:num/"'.
     https://stackoverflow.com/a/27016002/1175496
  -->
-<div class="posts"> 
-    <!-- <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>  -->
-    <ul class="post-list">
-        {%- for post in site.posts -%}
-        <li>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-            <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-            </a>
-        </h3>
-        {%- if site.show_excerpts -%}
-            {{ post.excerpt }}
-        {%- endif -%}
-        </li>
-        {%- endfor -%}
-    </ul>
+<div class="posts">
+  <!-- 11/14/2020 , realized  once paginator.total_pages had a value of 2, that I was looking at the last page; which contained only a single post -->
+  <!-- <h2>{{ paginator.total_pages }}  </h2> -->
+  <!-- <h2>Previous: {{ paginator.previous_page_path }}  </h2>
+  <h2>Next: {{ paginator.next_page_path }}  </h2>
+  <span>site.baseurl: {{  site.baseurl  }}</span>
+  <span>paginator.page : {{  paginator.page   }}</span>
+  <span>paginator.previous_page: {{  paginator.previous_page  }}</span>
+  <span>paginator.next_page: {{  paginator.next_page  }}</span>
+  <span>paginator.posts.size: {{  paginator.posts.size  }}</span> -->
+  <!-- <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>  -->
+  <ul class="post-list">
+    <!-- paginator.posts -->
+    <!-- site.posts -->
+    {%- for post in paginator.posts -%}
+    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+    <li>
+      <span class="post-meta">{{ post.date | date: date_format }}</span>
+      <h3>
+        <a class="post-link"
+           href="{{ post.url | relative_url }}">
+          {{ post.title | escape }}
+        </a>
+      </h3>
+      {%- if site.show_excerpts -%}
+      {{ post.excerpt }}
+      {%- endif -%}
+    </li>
+    {%- endfor -%}
+  </ul>
 
   <!-- Will not autogenerate a feed.xml because feed plugin not supported -->
   <!-- <p class="feed-subscribe">
@@ -39,7 +52,7 @@ permalink: /posts/
       <svg class="svg-icon orange"><use xlink:href="{{ 'assets/minima-social-icons.svg#rss' | relative_url }}"></use></svg><span>Subscribe</span>
     </a>
   </p> -->
-  
+
   <!-- <div class="post">
     <h1 class="post-title">
       <a href="{{ post.url }}">
@@ -53,23 +66,35 @@ permalink: /posts/
     {{ post.content }}
   </div> -->
 </div>
-
+<!-- 
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}" class="previous">
+      Previous
+    </a>
+  {% else %}
+    <span class="previous">Previous</span>
+  {% endif %}
+  <span class="page_number ">
+    Page: {{ paginator.page }} of {{ paginator.total_pages }}
+  </span>
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+  {% else %}
+    <span class="next ">Next</span>
+  {% endif %}
+</div> -->
 <div class="pagination">
   {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ site.baseurl }}page{{paginator.next_page}}">Older</a>
+  <a class="pagination-item older"
+     href="{{ paginator.next_page_path }}">Older</a>
   {% else %}
-    <span class="pagination-item older">Older</span>
+  <span class="pagination-item older">Older</span>
   {% endif %}
   {% if paginator.previous_page %}
-  <span>{{  site.baseurl  }}</span>
-  <span>{{  paginator.previous_page  }}</span>
-  <span>{{  paginator.posts.size  }}</span>
-    {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}">Newer</a>
-    {% else %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}page{{paginator.previous_page}}">Newer</a>
-    {% endif %}
+  <a class="pagination-item newer"
+     href="{{ paginator.previous_page_path }}">Newer</a>
   {% else %}
-    <span class="pagination-item newer">Newer</span>
+  <span class="pagination-item newer">Newer</span>
   {% endif %}
 </div>

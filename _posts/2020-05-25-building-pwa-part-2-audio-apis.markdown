@@ -68,15 +68,11 @@ TODO: How to throttle requestAnimationFrame / animating
 
 # Measuring Now
 `performance.now()` vs `Date.now()`; the former measures the number of milliseconds since [the "time origin"](https://developer.mozilla.org/en-US/docs/Web/API/DOMHighResTimeStamp#The_time_origin), the latter measures the number of milliseconds since [Jan 1, 1970](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/now)
-<!-- https://stackoverflow.com/a/19772220/1175496 
 
-            // https://stackoverflow.com/questions/15871942/how-do-browsers-pause-change-javascript-when-tab-or-window-is-not-active
-            // https://stackoverflow.com/q/15871942/1175496
-            https://stackoverflow.com/questions/15871942/how-do-browsers-pause-change-javascript-when-tab-or-window-is-not-active#comment79562085_16033979
-
-
-
-            https://stackoverflow.com/questions/4288253/html5-canvas-100-width-height-of-viewport#comment10499300_4288338
-
-
-            -->
+<!-- 
+https://stackoverflow.com/a/19772220/1175496 
+https://stackoverflow.com/questions/15871942/how-do-browsers-pause-change-javascript-when-tab-or-window-is-not-active
+https://stackoverflow.com/q/15871942/1175496
+https://stackoverflow.com/questions/15871942/how-do-browsers-pause-change-javascript-when-tab-or-window-is-not-active#comment79562085_16033979
+https://stackoverflow.com/questions/4288253/html5-canvas-100-width-height-of-viewport#comment10499300_4288338
+-->

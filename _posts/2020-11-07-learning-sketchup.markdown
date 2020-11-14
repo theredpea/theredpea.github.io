@@ -5,7 +5,7 @@ date:   2020-11-07 14:50:30 -0700
 excerpt_separator: <!--more-->
 ---
 
-Some resources for learning Sketchup
+Some resources for learning [Sketchup](https://www.sketchup.com/), the 3D modeling software available for free online, to model the landscaping job.
 
 <!--more-->  
 # Links
