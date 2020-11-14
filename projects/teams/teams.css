@@ -11,3 +11,11 @@
 calling-chat {
   display: none!important;
 }
+
+
+.ts-input-name {
+  /* TODO: Add in JS the code to auto-populate 
+  the input.ts-input-name field with a value 
+  specified in extensions' config area */
+  display: none!important;
+}

@@ -34,6 +34,7 @@ Some inspiration:
  - Nikolay Dudaev's [site](https://nikolaydudaev.com/)
  - Valentina D'Efilippo's [site](http://www.valentinadefilippo.co.uk/) 
  - Robert Hodgin's [site]( http://www.roberthodgin.com/)
+ - mikefc's site [coolbutuseless](https://coolbutuseless.github.io/about/)
  - [Mapnificent](https://www.mapnificent.net/); visualize how far you can get in 30 minutes via public transit
 
 {% include social.html %}
