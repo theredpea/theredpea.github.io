@@ -30,6 +30,13 @@ possible_placements <- setdiff(possible_placements, diags)
 ... as described [here](https://www.rdocumentation.org/packages/prob/versions/1.0-1/topics/setdiff):
  > the elements of setdiff(x,y) are **those elements in x but not in y**.
 
+**EDIT**
+I noticed the author skipped the filtering step in the "compacted" solution:
+```
+f=function(q){L=length(q)
+if(L==8){q}else{flatten(map(setdiff(v,c(q,q+L:1,q-L:1)),~f(c(q,.))))}}
+```
+
 
 # Tilde plus dot
 
@@ -71,21 +78,66 @@ I didn't understand how the recursive `place_queen` R function would return a va
 I learned that R functions [will automatically return the last statement](https://www.oreilly.com/library/view/the-art-of/9781593273842/ch07s04.html):
  > You can transmit a value back to the caller by explicitly calling return(). **Without this call, the value of the last executed statement will be returned by default.** For instance, consider the oddcount() example from Chapter 1:
 
-# Recursive functions in observable
-Observable will complain about a "circular definition" unless we follow [this approach](https://talk.observablehq.com/t/recursive-function-as-block-value/734)
+# Recursive functions in Observable
+Observable will complain about a "circular definition" unless we follow [this approach](https://talk.observablehq.com/t/recursive-function-as-block-value/734/2); i.e. using the `function declaration`, vs assigning a function to the block's value.
 
-# Progress on the Observable
-I struggled to figure out the equivalent of the ` %>% flatten()`
+# `flatten()` in Javascript
+I struggled to figure out the equivalent of the ` %>% flatten()`.
 
-In fact, the Javascript `Array.prototype.flat()` was exactly correct.
-When I first used `.flat()`, my result was a single array of 736 numbers (that's all 92 solutions x 8 positions per solution)
-I realized my `.flat()` was "over-flattening", because my solutions were a normal Javascript array (i.e. my solutions were susceptible to being flattened!)
+In fact, the Javascript [`Array.prototype.flat()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat) is the equivalent of `flatten()`
+When I first used `.flat()`, my result was a single array of 736 numbers (that's all 92 solutions x 8 positions per solution) - vs an array with 92 elements, each of which is an 8-element Array.
+
+I realized my `.flat()` was "over-flattening", because my "solutions" were a normal Javascript array (i.e. my solutions were susceptible to being flattened!):
+
+```
+if (queens.length===8){
+  return queens;
+}
+```
+
+This would be the equivalent to the R code, in the sense that it returns an object that *can be flattened*
+```
+  return(queens)
+```
+
 So I changed my solutions to an object, with a `solution` property and a `length` property.
 
-# ggplot to see
+```
+  if (queens.length == 8) {
+    let result = { solution: queens, length: queens.length };
+    return result;
+  }
+```
+
+This is closer to the original R code, in the sense that it returns an object that *is not flattened*:
+```
+    return(list(queens))
+```
+
+Notice the use of `unlist()` later on (in the "compact" version of R code), and remember `flatten()` is different than `unlist()` as described [here](https://purrr.tidyverse.org/reference/flatten.html):
+ > `flatten()` removes a level hierarchy from a list. They are similar to `unlist()`, but **they only ever remove a single layer of hierarchy and they are type-stable**, so you always know what the type of the output is.
+
+Notice that the "compact" version of R code
+
+
+# ggplot requires `show()` inside a function
 I had to call `show()` or `print()` to see the `geom_tile` visualization, [as described here](https://stackoverflow.com/questions/26643852/ggplot-plots-in-scripts-do-not-display-in-rstudio), and [here](https://ggplot2.tidyverse.org/reference/print.ggplot.html).
 
  > You will, however, need to call `print()` explicitly if you want to draw a plot inside a function or for loop.
+
+Notice that the plots are rotated 90 degrees, so they aren't oriented the way I expect. The `queens_df` should use `cols` as the x-axis, not the `rows`:
+```
+  p <- ggplot(queens_df, aes(rows, cols)) + # ...
+```
+... so just swap the `rows`, and `cols`, then we get the right orientation:
+```
+  p <- ggplot(queens_df, aes(cols, rows)) + # ...
+```
+
+# Code golf
+The original blogpost compresses all the R code necessary to 1) find all solutions and 2) visualize all solutions, into < 160 characters (so it can fit in a tweet!)
+
+
 
 # Visualizing Recursive solutions
 Some links: 
