@@ -6,7 +6,7 @@ excerpt_separator: <!--more-->
 ---
 
 @coolbutuseless has a great [blog on solving the "Eight Queens" problem using R.](https://coolbutuseless.github.io/2020/11/02/8-queens-chess-problem/)
-To challenge myself in translating "R" code, I created an Observable notebook. [See the final product here](https://observablehq.com/@theredpea/eight-queens); read on to learn how I did it.
+To challenge myself in translating "R" code, I created an Observable notebook. [See the final product here](https://observablehq.com/@theredpea/eight-queens){:target="_blank"}; read on to learn how I did it.
 
 <!--more-->
 
