@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Eight Queen Problems with Observable"
+title:  "'Eight Queens' Problem with Observable"
 date:   2020-11-14 11:50:30 -0700
 excerpt_separator: <!--more-->
 ---
@@ -53,11 +53,27 @@ Turns out the tilde `~` creates a simple lambda function, whose arguments are ac
  >  > 1. For a two argument function, use `.x` and `.y`
  >  > 1. For more arguments, use `..1`, `..2`, `..3` etc
 
+In this case, could replace the first argument of a single-argument function, so would this be equivalent (replace `.x` with `.`)?
+```
+    map(~place_queen(c(queens, .))) %>%
+```
+In fact, if the inner function is `c(...)`, then isn't `c(., queens)` the equivalent of `c(queens, .)`; so we could use the "implicit" version: (do we need braces?) 
+No, this is for the *piping* dot operator, vs the *tilde-lambda* dot operator...
+```
+    map(~place_queen(c(queens))) %>%
+```
 
-# Last statement is implicitly returned
+
+# Last statements of R functions are automatically returned
 
 I didn't understand how the recursive `place_queen` R function would return a value; I saw a return statement once it found a solution, but I didn't see a return statement at the end of the function, to return the `possible_placements` once finished recursively searching all solutions and flattening them.
 
 I learned that R functions [will automatically return the last statement](https://www.oreilly.com/library/view/the-art-of/9781593273842/ch07s04.html):
  > You can transmit a value back to the caller by explicitly calling return(). **Without this call, the value of the last executed statement will be returned by default.** For instance, consider the oddcount() example from Chapter 1:
 
+# Recursive functions in observable
+Observable will complain about a "circular definition" unless we follow [this approach](https://talk.observablehq.com/t/recursive-function-as-block-value/734)
+
+# Progress on the Observable
+I can't figure out the equivaletn of the ` %>% flatten()`
+But I have [a working function](https://observablehq.com/d/da0fe6a90f0830a4)

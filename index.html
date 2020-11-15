@@ -4,7 +4,7 @@ title: Home
 ---
 
 <p class="header">
-  Hi, I'm Nate Anderson. 
+  Hi, I'm Nate Anderson.
   <!-- </p><p class="header"> -->
   Welcome to <span class="bitmask-font">bitmask</span>
   studios
@@ -17,16 +17,17 @@ title: Home
   <div class="featured-works-grid--featured-work 
   {% if featured_work.double_wide %} double-wide {% endif %}
   {% if featured_work.rotate %} rotate {% endif %}
-  "
-    
-    >
-    <div class="featured-works-grid--featured-background-image"
-         style="background-image:url('/assets/images/featured_works/{{featured_work.image}}');">
+  ">
+    <a href="{{ featured_work.href }}"
+       target="_blank">
+      <div class="featured-works-grid--featured-background-image"
+           style="background-image:url('/assets/images/featured_works/{{featured_work.image}}');">
 
-    </div>
-    <h3 class="featured-works-grid--featured-title">
-      {{ featured_work.title | escape }}
-    </h3>
+      </div>
+      <h3 class="featured-works-grid--featured-title">
+        {{ featured_work.title | escape }}
+      </h3>
+    </a>
   </div>
   {%- endfor -%}
 </div>
