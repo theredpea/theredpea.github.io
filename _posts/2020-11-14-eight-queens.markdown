@@ -6,7 +6,7 @@ excerpt_separator: <!--more-->
 ---
 
 @coolbutuseless has a great [blog on solving the "Eight Queens" problem using R.](https://coolbutuseless.github.io/2020/11/02/8-queens-chess-problem/)
-To challenge myself in translating "R" code, I created an Observable notebook. 
+To challenge myself in translating "R" code, I created an Observable notebook. [See the final product here](https://observablehq.com/@theredpea/eight-queens); read on to learn how I did it.
 
 <!--more-->
 
@@ -75,5 +75,20 @@ I learned that R functions [will automatically return the last statement](https:
 Observable will complain about a "circular definition" unless we follow [this approach](https://talk.observablehq.com/t/recursive-function-as-block-value/734)
 
 # Progress on the Observable
-I can't figure out the equivaletn of the ` %>% flatten()`
-But I have [a working function](https://observablehq.com/d/da0fe6a90f0830a4)
+I struggled to figure out the equivalent of the ` %>% flatten()`
+
+In fact, the Javascript `Array.prototype.flat()` was exactly correct.
+When I first used `.flat()`, my result was a single array of 736 numbers (that's all 92 solutions x 8 positions per solution)
+I realized my `.flat()` was "over-flattening", because my solutions were a normal Javascript array (i.e. my solutions were susceptible to being flattened!)
+So I changed my solutions to an object, with a `solution` property and a `length` property.
+
+# ggplot to see
+I had to call `show()` or `print()` to see the `geom_tile` visualization, [as described here](https://stackoverflow.com/questions/26643852/ggplot-plots-in-scripts-do-not-display-in-rstudio), and [here](https://ggplot2.tidyverse.org/reference/print.ggplot.html).
+
+ > You will, however, need to call `print()` explicitly if you want to draw a plot inside a function or for loop.
+
+# Visualizing Recursive solutions
+Some links: 
+ - [Recursion and Memory Visualization (from educative)](https://www.educative.io/courses/recursion-for-coding-interviews-in-python/B8wMXy0nmvk)
+ - [Visualizing Recursion in Principles of Computing (coursera)](https://www.coursera.org/lecture/principles-of-computing-2/visualizing-recursion-pubjS)
+ - [Visualizing a chessboard in Observable](https://observablehq.com/@harrislapiroff/chessboard)
