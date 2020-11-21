@@ -9,9 +9,9 @@ permalink: /about/
 
 Hi, I'm Nate Anderson. 
 
-I'm a web-developer originally from Kaneohe, Hawaii. I live in Englewood, Colorado with my husband.
+I'm a web-developer originally from Kāneʻohe, Hawaii. I live in Englewood, Colorado with my husband.
 
-I graduated from the USC where I studied Interactive Media and Accounting. These days I'm interested in data visualization and data science.
+I graduated from USC where I studied Interactive Media and Accounting. These days I'm interested in data visualization and data science.
 
 Here at bitmask I'll post about things like:
  - data journalism
@@ -20,7 +20,7 @@ Here at bitmask I'll post about things like:
  - pics of my dogs
  - movies, recipes, etc
 
-Hopefully bitmask does better than my previous attempts at a personal page:
+I hope bitmask does better than my last few tries:
  - [Nate's XBRL site](http://xbrlnexus.appspot.com/#)
  - [Nate's XBRL Blog](http://xbrlnexus.wordpress.co/)
 
@@ -36,5 +36,8 @@ Some inspiration:
  - Robert Hodgin's [site]( http://www.roberthodgin.com/)
  - mikefc's site [coolbutuseless](https://coolbutuseless.github.io/about/)
  - [Mapnificent](https://www.mapnificent.net/); visualize how far you can get in 30 minutes via public transit
-
+ - Michael Freeman's site [mfviz](http://mfviz.com/)
+ - Matthew Kay's [site](http://blog.mjskay.com/)
+ - Duy Nguyen's [site](https://duyknguyen.com/profile/)
+ - Andre Olieira's [site](https://andrepoliveira.com/blog/)
 {% include social.html %}
