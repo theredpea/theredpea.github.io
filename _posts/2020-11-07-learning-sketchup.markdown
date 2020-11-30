@@ -5,7 +5,7 @@ date:   2020-11-07 14:50:30 -0700
 excerpt_separator: <!--more-->
 ---
 
-Some resources for learning [Sketchup](https://www.sketchup.com/), the 3D modeling software available for free online, to model the landscaping job.
+Some resources for learning [Sketchup](https://www.sketchup.com/), (3D modeling software available for free online), to model my landscaping job for the house across the street.
 
 <!--more-->  
 # Links
@@ -17,6 +17,15 @@ Some resources for learning [Sketchup](https://www.sketchup.com/), the 3D modeli
  - [Self-paced tutorials in the 3D Warehouse (`*.skp` files)](https://3dwarehouse.sketchup.com/collection/36e1fa0d054a15eecc725c514c21d975/Self-paced-Tutorials)
  - [SketchUp YouTube channel](https://www.youtube.com/user/SketchUpVideo)
   - [How to move a point](https://www.youtube.com/watch?time_continue=129&v=XEHcjBRc9Oo&feature=emb_logo)
+
+### Moving a Point vs a Line
+ - [Clever approach using a vertical line](https://www.google.com/search?q=move+one+point+in+line+sketchup&oq=move+one+point+in+line+sketchup&aqs=chrome..69i57.4892j0j7&sourceid=chrome&ie=UTF-8#kpvalbx=_N125X4axOIj5tAbLoaDIBA18)
+ ### Keyboard Shortcuts: Basics
+  <key>Space</key> - Cursor ; for selecting
+  <key>R</key> - Rectangle ; for drawing in 2D
+  <key>L</key> - Line ; for drawing in 1D
+  <key>M</key> - Move ; for re-arranging
+  <key></key> - Scrollwheel on 3-clik Mouse (and <key>Ctrl/Alt</key>); for getting a good perspective
 
 ## Day Two
 I built a rough model of the house
@@ -42,9 +51,45 @@ I took measurements of a few parts of the house and the front yard so I could bu
    - So I could take a screenshot of the house in Google Map Satellite view, and use the screenshot as an image/architecture reference
    - [Import an image](https://help.sketchup.com/en/sketchup/tracing-image) 
 
+  ### Resizing with Tape Measurer
+  Click once to place starting point; click a second time to place ending point, note the length of the segment you just created; then type a new length, and hit <key> Enter</key>; (you'll be prompted to resize the "active component" aka group if you're in one.)
+
+  ### "Gluing" / Glue to Surface
+   - [A component cna be glued](https://forums.sketchup.com/t/setting-a-components-glue-to-surface/52290), so you cant move it on one of 3 axes.
+ ## Keyboard Shortcuts: Measurements
+  <key>T</key> - Tape Measure ; for creating reference lines/points
+  Custom Keyboard shortcuts
+  <key>Shift</key> + <key> G</key> - [Create a Group](https://mastersketchup.com/double-speed-sketchup/)
+
 
 
 ## Interesting Links
 
  - [Sketchup "Pre-design"](https://forums.sketchup.com/t/design-research-get-it-right-with-predesign/142661) provides a "concise overview of the seasons, sky conditions, and predominant winds"
    - After using the shadow feature, I think Pre-design sounds great!
+
+## Day Four
+
+  <key>S</key> - Scale;  for creating reference lines/points (Hold <key> Ctrl</key> to scale around the center)
+  <key>Q</key> - Rotate;
+
+
+## Day Five
+
+### Creating Dimension Annotations from Lines
+Create a dimension annotation by grabbing an existing line, and "raising" it. This is useful becuase I find
+
+If you create a dimension along a line (i.e. same target vertex is on same edge as start vertex), when you click the target, there will not be a perpendicular line, there will only be a point.
+
+### Guide Points with Tape Measurer
+From the [Sketchup forum](https://forums.sketchup.com/t/how-to-add-a-guide-point/20796/2)
+ > You add a guide point by selecting the tape measure tool, clicking on a vertex, moving the cursor to where you want the point, and clicking again. If the new location is on the same edge as the start vertex, you will get just a guide point.
+
+
+ <key>Make your own*</key> - [Paste in Place](https://forums.sketchup.com/t/what-is-the-hotkey-for-paste-in-place/18695/3) Otherwise you [must right-click](https://forums.sketchup.com/t/copy-pasting-objects-paste-in-place/28366/2)
+
+
+
+### Intermediate Exercises
+
+

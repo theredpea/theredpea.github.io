@@ -5,9 +5,11 @@ date:   2020-09-27 10:50:30 -0700
 excerpt_separator: <!--more-->
 ---
 
-Observable Notebooks* support Promise syntax, and the newer [ECMAScript async/await syntax](https://tc39.es/ecma262/#sec-async-function-definitions). As shown in their [introduction to Promises](https://observablehq.com/@observablehq/introduction-to-promises). My post will explore more comparisons of their syntax, and some pros/cons of each. 
+Observable Notebooks* support Promise syntax, and the newer [ECMAScript async/await syntax](https://tc39.es/ecma262/#sec-async-function-definitions). In this post, I explore more comparisons of their syntax, and some pros/cons of each.
 
 <!--more-->  
+
+ Observable supports Promise syntax as shown in their [introduction to Promises](https://observablehq.com/@observablehq/introduction-to-promises).
 
 # Syntax Examples 
 await syntax and Promise syntax are not new to `Observable notebooks`*; the pros and cons apply in modern Javascript too; check out [these other resources](https://medium.com/better-programming/should-i-use-promises-or-async-await-126ab5c98789) that compare the two in Javascript. [Mozilla's `await` documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) also gives an example of equivalent await vs Promise syntax.
