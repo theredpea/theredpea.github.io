@@ -89,7 +89,39 @@ From the [Sketchup forum](https://forums.sketchup.com/t/how-to-add-a-guide-point
  <key>Make your own*</key> - [Paste in Place](https://forums.sketchup.com/t/what-is-the-hotkey-for-paste-in-place/18695/3) Otherwise you [must right-click](https://forums.sketchup.com/t/copy-pasting-objects-paste-in-place/28366/2)
 
 
+## Day Six
 
-### Intermediate Exercises
+### Using Section Planes
+[Section planes](https://help.sketchup.com/en/sketchup/slicing-model-peer-inside) give a "cross-section" view. This wasn't necessary for my landscaping project, but would be useful for interior design. The [building section symbol](https://slideplayer.com/slide/12729525/76/images/22/BUILDING+SECTION+SYMBOL.jpg) looked familiar (i.e. I remember them from the blueprints for my second-story addition.)
+
+### Browsing the 3D Warehouse
+I wanted to add landscaping elements like trees, but I didn't want to build something so complex! I used the 3D Warehouse. I took advantage of these features:
+
+ - Size filter
+  - so my overall model did not become too large/slow
+ - Category
+  - so I could search "Landscaping and Architecture" to narrow 
+ - Type of Results "Tab"
+  - The default "tab" is "Product", but I found additional results under the "Model" tab
 
 
+### Creating 2D Face-Me Components (Plants in the Yard)
+I added trees, but I couldn't find feathergrass in the 3D Warehouse, so I wanted to add my own image. [This article](https://blog.sketchup.com/article/making-your-own-face-me-people) explains how to do it. The basic steps are:
+ 1. import a 2D image
+  - I used a PNG with transparent edges I cut out [using Inkscape](https://inkscape.org/)
+ 2. convert it to a "Face-Me" Component
+  - so that it always "turns" to face the camera, so a 2D image appears to be 3D
+ 3. carve its hidden geometry so it casts a shadow
+  - Configure the component so the shadow is "perpendicular to the sun" 
+
+### Extruded Text
+I needed address letters on my front porch; 
+
+
+### Casting Light
+I added a horizontal "slats"/screen because I've seen them in my neighborhood and I liked them (especially at night). I wanted to "light" my slats in the Sketchup model, but the free Sketchup for Web doesn't have light features
+
+### Softening Edges with the Eraser tool and <key>Ctrl</key>
+Now that I moved past my "landscape" topography, I didn't need the distracting edges on the curved slope; I didn't need the reference lines I added to mark out the lengths I measured. 
+ - I hid the  edges with [the Eraser tool](https://help.sketchup.com/en/sketchup/softening-smoothing-and-hiding-geometry) (<key>E</key>), and holding <key>Ctrl</key> to soften/smooth 
+  
