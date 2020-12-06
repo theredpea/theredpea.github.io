@@ -61,14 +61,17 @@ Read about [other cameras here](https://threejs.org/docs/#api/en/cameras/Camera)
 
 
 # Geometry Basics
-There is another combination of 3 items that are essential in three.js:
+There is another combination of 3 items that are essential in three.js. 
 
  1. Mesh
  2. Geometry
  3. Material
 
+As described in the [threejs-fundamentals](https://threejsfundamentals.org/threejs/lessons/threejs-fundamentals.html): 
 
-These 3 "geometry" components work together with the line: 
+ > Mesh objects represent drawing a specific Geometry with a specific Material.
+
+These 3 "geometry" components work together when you create a `Mesh`; passing it a `Geometry`, and a `Material`: 
 
     const cube = new THREE.Mesh(geometry, material)
 
@@ -92,6 +95,7 @@ Geometry is the 3D "shape".
    - Used for lines
  - `TextGeometry`
 
+Check out some examples of the ["geometry primitives" at the threejs fundamentals site](https://threejsfundamentals.org/threejs/lessons/threejs-primitives.html)
 
 ## Material
 Material is the "surface";
@@ -111,6 +115,7 @@ Above we use the `THREE.MeshBasicMaterial`, but there are other types of materia
 The documentation for three.js is thorough, there are many examples but few tutorials.
 
  - Check out the [Red Stapler](https://www.youtube.com/watch?v=cp-H_6VODko&feature=emb_logo) videos
+ - threejs fundamentals
 
 # Other Browser-based 3D Libraries
  - [babylon.js](https://www.babylonjs.com/); here's an article on [three.js vs babylon.js](https://medium.com/javascript-in-plain-english/webgl-frameworks-three-js-vs-babylon-js-36975d915694)
