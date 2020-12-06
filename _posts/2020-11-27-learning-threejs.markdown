@@ -27,6 +27,10 @@ A renderer will create/ "render" the 3D image i.e. the "view" that we see in our
     const renderer = new THREE.WebGLRenderer();
     renderer.setSize( window.innerWidth, window.innerHeight );
 
+I checked more examples like this [OBJ file loader](https://github.com/mrdoob/three.js/blob/master/examples/webgl_loader_obj.html). In all these examples,  `THREE.WebGLRenderer()` seems like the standard. (I haven't seen a different type of Renderer, while objects like `Camera` and `Geometry` have many varieties)
+
+(OBJ is a file extension I'm exporting from SketchUp)
+
 ## Scene
 A scene will contain the 3D objects we're drawing i.e. the objects being "viewed". Creating a scene is very basic, no arguments required for the constructor:
 

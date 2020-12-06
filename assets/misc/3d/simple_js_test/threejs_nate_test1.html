@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My first three.js app</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <script src="js/three.js"></script> -->
+    <!-- <script type="module">
+
+        // Find the latest version by visiting https://unpkg.com/three. The URL will
+        // redirect to the newest stable release.
+        import * as THREE from 'https://unpkg.com/three@<VERSION>/build/three.module.js';
+
+        const scene = new THREE.Scene();
+
+    </script> -->
+    <!-- <script src="https://threejs.org/build/three.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r122/three.js"></script>
+    <script>
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 500);
+        camera.position.set(0, 0, 100);
+        camera.lookAt(0, 0, 0);
+
+        const scene = new THREE.Scene();
+        // LineDashedMaterial.
+        //
+        const lineMaterial = new THREE.LineDashedMaterial({ color: 0x0000ff });
+
+        const points = [];
+        points.push(new THREE.Vector3(-10, 0, 0));
+        points.push(new THREE.Vector3(0, 10, 0));
+        points.push(new THREE.Vector3(10, 0, 0));
+
+        const geometry = new THREE.BufferGeometry().setFromPoints(points);
+
+        const cubeGeometry = new THREE.CubeGeometry();
+        const cubeGeometry = new THREE.BoxGeometry();
+        // Size of the Cube by default is 1, 1, 1 
+        // so the Vector lines are must larger.
+        const cubeMaterial = new THREE.MeshBasicMaterial({ color: 'red' });
+        const cubeMesh = new THREE.Mesh(cubeGeometry, cubeMaterial);
+        scene.add(cubeMesh);
+
+        const line = new THREE.Line(geometry, lineMaterial);
+        scene.add(line);
+        renderer.render(scene, camera);
+
+        const animate = function () {
+            requestAnimationFrame(animate);
+
+            cubeMesh.rotation.x += 0.01;
+            cubeMesh.rotation.y += 0.01;
+
+            renderer.render(scene, camera);
+        };
+
+        animate();
+    </script>
+</body>
+
+</html>
