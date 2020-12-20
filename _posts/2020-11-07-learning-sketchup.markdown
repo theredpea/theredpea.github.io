@@ -21,11 +21,11 @@ Some resources for learning [Sketchup](https://www.sketchup.com/), (3D modeling 
 ### Moving a Point vs a Line
  - [Clever approach using a vertical line](https://www.google.com/search?q=move+one+point+in+line+sketchup&oq=move+one+point+in+line+sketchup&aqs=chrome..69i57.4892j0j7&sourceid=chrome&ie=UTF-8#kpvalbx=_N125X4axOIj5tAbLoaDIBA18)
  ### Keyboard Shortcuts: Basics
-  <key>Space</key> - Cursor ; for selecting
-  <key>R</key> - Rectangle ; for drawing in 2D
-  <key>L</key> - Line ; for drawing in 1D
-  <key>M</key> - Move ; for re-arranging
-  <key></key> - Scrollwheel on 3-clik Mouse (and <key>Ctrl/Alt</key>); for getting a good perspective
+  <kbd>Space</kbd> - Cursor ; for selecting
+  <kbd>R</kbd> - Rectangle ; for drawing in 2D
+  <kbd>L</kbd> - Line ; for drawing in 1D
+  <kbd>M</kbd> - Move ; for re-arranging
+  <kbd></kbd> - Scrollwheel on 3-clik Mouse (and <kbd>Ctrl/Alt</kbd>); for getting a good perspective
 
 ## Day Two
 I built a rough model of the house
@@ -52,14 +52,14 @@ I took measurements of a few parts of the house and the front yard so I could bu
    - [Import an image](https://help.sketchup.com/en/sketchup/tracing-image) 
 
   ### Resizing with Tape Measurer
-  Click once to place starting point; click a second time to place ending point, note the length of the segment you just created; then type a new length, and hit <key> Enter</key>; (you'll be prompted to resize the "active component" aka group if you're in one.)
+  Click once to place starting point; click a second time to place ending point, note the length of the segment you just created; then type a new length, and hit <kbd> Enter</kbd>; (you'll be prompted to resize the "active component" aka group if you're in one.)
 
   ### "Gluing" / Glue to Surface
    - [A component cna be glued](https://forums.sketchup.com/t/setting-a-components-glue-to-surface/52290), so you cant move it on one of 3 axes.
  ## Keyboard Shortcuts: Measurements
-  <key>T</key> - Tape Measure ; for creating reference lines/points
+  <kbd>T</kbd> - Tape Measure ; for creating reference lines/points
   Custom Keyboard shortcuts
-  <key>Shift</key> + <key> G</key> - [Create a Group](https://mastersketchup.com/double-speed-sketchup/)
+  <kbd>Shift</kbd> + <kbd> G</kbd> - [Create a Group](https://mastersketchup.com/double-speed-sketchup/)
 
 
 
@@ -70,8 +70,8 @@ I took measurements of a few parts of the house and the front yard so I could bu
 
 ## Day Four
 
-  <key>S</key> - Scale;  for creating reference lines/points (Hold <key> Ctrl</key> to scale around the center)
-  <key>Q</key> - Rotate;
+  <kbd>S</kbd> - Scale;  for creating reference lines/points (Hold <kbd> Ctrl</kbd> to scale around the center)
+  <kbd>Q</kbd> - Rotate;
 
 
 ## Day Five
@@ -86,7 +86,7 @@ From the [Sketchup forum](https://forums.sketchup.com/t/how-to-add-a-guide-point
  > You add a guide point by selecting the tape measure tool, clicking on a vertex, moving the cursor to where you want the point, and clicking again. If the new location is on the same edge as the start vertex, you will get just a guide point.
 
 
- <key>Make your own*</key> - [Paste in Place](https://forums.sketchup.com/t/what-is-the-hotkey-for-paste-in-place/18695/3) Otherwise you [must right-click](https://forums.sketchup.com/t/copy-pasting-objects-paste-in-place/28366/2)
+ <kbd>Make your own*</kbd> - [Paste in Place](https://forums.sketchup.com/t/what-is-the-hotkey-for-paste-in-place/18695/3) Otherwise you [must right-click](https://forums.sketchup.com/t/copy-pasting-objects-paste-in-place/28366/2)
 
 
 ## Day Six
@@ -121,7 +121,7 @@ I needed address letters on my front porch;
 ### Casting Light
 I added a horizontal "slats"/screen because I've seen them in my neighborhood and I liked them (especially at night). I wanted to "light" my slats in the Sketchup model, but the free Sketchup for Web doesn't have light features
 
-### Softening Edges with the Eraser tool and <key>Ctrl</key>
+### Softening Edges with the Eraser tool and <kbd>Ctrl</kbd>
 Now that I moved past my "landscape" topography, I didn't need the distracting edges on the curved slope; I didn't need the reference lines I added to mark out the lengths I measured. 
- - I hid the  edges with [the Eraser tool](https://help.sketchup.com/en/sketchup/softening-smoothing-and-hiding-geometry) (<key>E</key>), and holding <key>Ctrl</key> to soften/smooth 
+ - I hid the  edges with [the Eraser tool](https://help.sketchup.com/en/sketchup/softening-smoothing-and-hiding-geometry) (<kbd>E</kbd>), and holding <kbd>Ctrl</kbd> to soften/smooth 
   

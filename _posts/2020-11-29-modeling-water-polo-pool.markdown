@@ -34,6 +34,8 @@ Note:
 |                 |        |                                                 |                   |                   |                        |                         |                                  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |                                                                     |
 
 ## Authority
-[FINA is the authoritative source](http://www.fina.org/) cited by the above sources; (the Fédération Internationale de Natation; French for "international swimming federation")
+[FINA is the authoritative source](http://www.fina.org/) cited by the above sources; (the Fédération Internationale de Natation; French for "international swimming federation"). Here's the [official rulebook from February 2019](https://www.fina.org/sites/default/files/13-03-2019-corrections-2018_congress_amended_rules_def-1.pdf)
 
 
+# Making Water Polo Visual
+I want to doodle more Water Polo stuff, like [eggbeater](https://hips.hearstapps.com/esq.h-cdn.co/assets/cm/15/07/54d8f1dbe2f7f_-_esq-10-eggbeater-0812-lg.jpg). We  could even incorporate what we learn into our practices at Denver Squid. I thought [this article studying the physics of eggbeater](https://www.sciencedirect.com/science/article/pii/S2405844018314701#fig2) was interesting and had very helpful diagrams.
