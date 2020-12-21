@@ -2,16 +2,17 @@
     background-color:red!important;
 } */
 
+/* Prevent the user from reaching the "conversation/chat " feature */
 .app-header-bar {
   /* background-color: #2e31db!important; */
   background-color: #4f4f4f!important;
 }
 
+/* Prevent the user from reaching the "conversation/chat " feature */
 #chat-button,
 calling-chat {
   display: none!important;
 }
-
 
 .ts-input-name {
   /* TODO: Add in JS the code to auto-populate 
