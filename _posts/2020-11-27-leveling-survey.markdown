@@ -5,7 +5,7 @@ date:   2020-11-27 11:45:30 -0700
 excerpt_separator: <!--more-->
 ---
 
-As a kid I would watch surveyors at their tripods, as they carefully calibrated their instruments. Today I learned more about their instruments so I could get make a topographical map of my front yard in Sketchup.
+As a kid I would watch surveyors at their tripods as they carefully calibrated their instruments. Today I learned more about their instruments so I could get make a topographical map of my front yard in Sketchup.
 
 <!--more-->
 # Surveys

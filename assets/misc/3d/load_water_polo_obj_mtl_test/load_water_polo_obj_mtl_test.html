@@ -69,20 +69,23 @@
 
             // manager
 
-            function loadModel() {
+            // LoadingManager
+            // Handles and keeps track of loaded and pending data. A default global instance of this class is created and used by loaders if not supplied manually - see DefaultLoadingManager.
+            const manager = new THREE.LoadingManager();//loadModel);
 
-                object.traverse(function (child) {
+            // manager.onLoad = function () {
 
-                    // if (child.isMesh) child.material.map = texture;
+            //     object.traverse(function (child) {
 
-                });
+            //         // if (child.isMesh) child.material.map = texture;
 
-                // object.position.y = - 95;
-                scene.add(object);
+            //     });
 
-            }
+            //     // object.position.y = - 95;
+            //     scene.add(object);
 
-            const manager = new THREE.LoadingManager(loadModel);
+            // };
+
 
             manager.onProgress = function (item, loaded, total) {
 
@@ -97,7 +100,7 @@
 
             // model
 
-            function onProgress(xhr) {
+            function onLoadProgress(xhr) {
 
                 if (xhr.lengthComputable) {
 
@@ -108,27 +111,42 @@
 
             }
 
-            function onError() { }
+            function onLoadError() { console.error('generic onLoadError') }
 
 
-            const loader = new OBJLoader(manager);
+            const objLoader = new OBJLoader(manager);
 
             const materialsLoader = new MTLLoader(manager);
 
-            materialsLoader.load('models/obj/Modeling Water Polo for Export.obj/d2e8bc61-6dd1-4554-b874-13b5364d656e.mtl', function (materialsCreator) {
+            materialsLoader.load('models/obj/Modeling Water Polo for Export.obj/d2e8bc61-6dd1-4554-b874-13b5364d656e.mtl',
+                /* 
+                // onLoad 
+                // onLoad — (optional) A function to be called after the loading is successfully completed. The function receives the loaded MTLLoader.MaterialCreator instance.
+                */
+                function (materialsCreator) {
 
-                // https://threejs.org/docs/#examples/en/loaders/OBJLoader.setMaterials
-                loader.setMaterials(materialsCreator);
+                    // https://threejs.org/docs/#examples/en/loaders/OBJLoader.setMaterials
+                    objLoader.setMaterials(materialsCreator);
 
 
-                // loader.load( 'models/obj/male02/male02.obj', function ( obj ) {
-                loader.load('models/obj/Modeling Water Polo for Export.obj/d2e8bc61-6dd1-4554-b874-13b5364d656e.obj', function (obj) {
+                    // objLoader.load( 'models/obj/male02/male02.obj', function ( obj ) {
+                    objLoader.load('models/obj/Modeling Water Polo for Export.obj/d2e8bc61-6dd1-4554-b874-13b5364d656e.obj', function (obj) {
 
-                    object = obj;
+                        object = obj;
 
-                }, onProgress, onError);
 
-            }, onProgress, onError);
+                        // object.traverse(function (child) {
+
+                        //     // if (child.isMesh) child.material.map = texture;
+
+                        // });
+
+                        // object.position.y = - 95;
+                        scene.add(object);
+
+                    }, onLoadProgress, onLoadError);
+
+                }, onLoadProgress, onLoadError);
 
             renderer = new THREE.WebGLRenderer();
             renderer.setPixelRatio(window.devicePixelRatio);
@@ -176,7 +194,7 @@
             camera.position.x += (mouseX - camera.position.x) * .05 / 5;
             camera.position.y += (- mouseY - camera.position.y) * .05 / 5;
 
-            console.log(camera.position.x, camera.position.y);
+            // console.log(camera.position.x, camera.position.y);
             if (Math.abs(camera.position.x) > threshholdX) {
                 camera.position.x = threshholdX * Math.abs(camera.position.x) / camera.position.x;
             }

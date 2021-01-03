@@ -9,7 +9,7 @@ permalink: /about/
 
 Hi, I'm Nate Anderson. 
 
-I'm a web-developer originally from Kāneʻohe, Hawaii. I live in Englewood, Colorado with my husband.
+I'm a web-developer originally from Kāneʻohe, Hawaiʻi. I live in Englewood, Colorado with my husband, 2 dogs, and 2 cats.
 
 I graduated from USC where I studied Interactive Media and Accounting. These days I'm interested in data visualization and data science.
 

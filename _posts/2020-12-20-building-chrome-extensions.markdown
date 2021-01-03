@@ -5,7 +5,7 @@ date:   2020-12-20 11:22:00 -0700
 excerpt_separator: <!--more-->
 ---
 
-Our foster son uses Microsoft Teams on his Chromebook when his school switches to "remote learning" during the pandemic.  Here I learn the basics of building a Chrome Extension to inject CSS, inject a content script, and review some differences between Chrome Manifest Version 2 (aka MV2) and MV3.
+Our foster son uses Microsoft Teams on his Chromebook when his school switches to "remote learning" during the pandemic.  Here I review the basics of building a Chrome Extension to inject CSS, inject a content script, and review some differences between Chrome Manifest Version 2 (aka MV2) and MV3.
 
 
 <!--more-->
@@ -16,7 +16,7 @@ TODO
 
 
 # MV2 vs MV3
-Check out the differences in MV2 and MV3; this migration guide is great. I noticed some differences between the current Chrome Extension tutorial, and the sample code I made from a few months back. Turned out my sample code was in MV2, but the new tutorial referenced MV3. I guess the tutorial [changed to MV3 recently](https://developer.chrome.com/docs/extensions/mv3/), around Nov, 2020:
+Check out the differences in MV2 and MV3; [this migration guide](https://developer.chrome.com/docs/extensions/mv3/intro/mv3-migration) is great. I noticed some differences between the current Chrome Extension tutorial, and the sample code I made from a few months back. Turned out my sample code was in MV2, but the new tutorial referenced MV3. I guess the tutorial [changed to MV3 recently](https://developer.chrome.com/docs/extensions/mv3/), around Nov, 2020:
 
  > With Manifest V3 launching soon, we've changed the default documentation experience to be for MV3. 
 
