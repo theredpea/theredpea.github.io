@@ -29,10 +29,14 @@
         // import { OBJLoader } from 'https://cdn.jsdelivr.net/gh/mrdoob/three.js/examples/js/loaders/OBJLoader.js';
         import { OBJLoader } from 'https://cdn.jsdelivr.net/gh/mrdoob/three.js/examples/jsm/loaders/OBJLoader.js';
         import { MTLLoader } from 'https://cdn.jsdelivr.net/gh/mrdoob/three.js/examples/jsm/loaders/MTLLoader.js';
+        import { OrbitControls } from 'https://cdn.jsdelivr.net/gh/mrdoob/three.js/examples/jsm/controls/OrbitControls.js';
+        import { GUI } from 'https://threejsfundamentals.org/threejs/../3rdparty/dat.gui.module.js';
+
+
         // https://github.com/mrdoob/three.js/tree/master/examples/jsm/loaders
         let container;
 
-        let camera, scene, renderer;
+        let camera, scene, renderer, controls;
 
         let mouseX = 0, mouseY = 0;
 
@@ -53,38 +57,105 @@
             container = document.createElement('div');
             document.body.appendChild(container);
 
-            camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 2000);
-            camera.position.z = 10;
+            // PerspectiveCamera( fov : Number, aspect : Number, near : Number, far : Number )
+            const fov = 45;
+            const aspect = window.innerWidth / window.innerHeight;
+            const near = 1;
+            const far = 2000;
+
+            camera = new THREE.PerspectiveCamera(
+                fov,
+                aspect,
+                near,
+                far);
+
 
             // scene
 
             scene = new THREE.Scene();
 
-            const ambientLight = new THREE.AmbientLight(0xcccccc, 0.8);
+            //   scene.background.set(0x000000);
+            // scene.background = new THREE.Color('white');
+            // scene.background = new THREE.Color('grey');
+            scene.background = new THREE.Color('black');
+            // scene.background.set(0xffffff);
+
+            const ambientLight = new THREE.AmbientLight(0xcccccc, 1); //0.9);
             scene.add(ambientLight);
 
-            const pointLight = new THREE.PointLight(0xffffff, 0.8);
+            const pointLight = new THREE.PointLight(0xffffff, 1); //0.8);
+            // OH because we added the PointLight to the camera, it always looks like the camera is shining light at what it looks at!
             camera.add(pointLight);
+            const v = new THREE.Vector3();
+
+            camera.getWorldDirection(v);
+            console.log(v);
+
+            // Rotates the object to face a point in world space.
+            // const cameraLookAt = new THREE.Vector3(12, -10, 20);
+            // const cameraLookAt = new THREE.Vector3(0, 10, 0); //12, -10, 20);
+            // const cameraLookAt = new THREE.Vector3(); //0, 10, 0); //12, -10, 20);
+            const poloPoolWidthMeters = 20;
+            const poloPoolLengthMeters = 30;
+            const poloPoolHeight = 10;
+
+            const cameraLookAt = new THREE.Vector3(poloPoolWidthMeters / 2, poloPoolHeight, -poloPoolLengthMeters / 2); //0, 10, 0); //12, -10, 20);
+
+            // camera.position.z = 20;
+            // camera.position.x = -8;
+            // camera.position.y = 10;
+            camera.position.copy(cameraLookAt);
+            camera.position.y = camera.position.y * 2;
+            camera.lookAt(cameraLookAt); //12, -10, 20);
+            // can look wherever, but the OrbitControls later will use controls.target.set
+            // camera.lookAt(0, 0, 0); //12, -10, 20);
+            const v2 = new THREE.Vector3();
+            camera.getWorldDirection(v2);
+            console.log(v2);
+
+            renderer = new THREE.WebGLRenderer();
+            renderer.setPixelRatio(window.devicePixelRatio);
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            // https://github.com/mrdoob/three.js/issues/10561
+            // adding OrbitControls will override the camera.lookAt, 
+            controls = new OrbitControls(camera, renderer.domElement);
+            // therefore you must set the controls.target ...
+            // controls.target.set(0, 5, 0);
+            // even if it is the same place you wanted the camera to look at...
+            controls.target.copy(cameraLookAt);
+            // https://github.com/mrdoob/three.js/issues/10561
+
+            controls.update();
+
+            {
+                const sphereRadius = 0.5;
+                const sphereWidthDivisions = 32;
+                const sphereHeightDivisions = 16;
+                const sphereGeo = new THREE.SphereBufferGeometry(sphereRadius, sphereWidthDivisions, sphereHeightDivisions);
+                const sphereMat = new THREE.MeshPhongMaterial({ color: '#CA8' });
+                const mesh = new THREE.Mesh(sphereGeo, sphereMat);
+                // mesh.position.set(-sphereRadius - 1, sphereRadius + 2, 0);
+                mesh.position.copy(cameraLookAt);//-sphereRadius - 1, sphereRadius + 2, 0);
+                // mesh.position.set(cameraLookAt.x, cameraLookAt.y, cameraLookAt.z);//-sphereRadius - 1, sphereRadius + 2, 0);
+                scene.add(mesh);
+            }
+
             scene.add(camera);
 
+            const gui = new GUI();
+            // https://threejsfundamentals.org/threejs/lessons/threejs-lights.html
+            // gui.addColor(new ColorGUIHelper(light, 'color'), 'value').name('color');
+            // gui.add(light, 'intensity', 0, 2, 0.01);
+            gui.add(pointLight, 'distance', 0, 100); // no helper to update: .onChange(updateLight);
             // manager
 
             // LoadingManager
             // Handles and keeps track of loaded and pending data. A default global instance of this class is created and used by loaders if not supplied manually - see DefaultLoadingManager.
             const manager = new THREE.LoadingManager();//loadModel);
 
-            // manager.onLoad = function () {
-
-            //     object.traverse(function (child) {
-
-            //         // if (child.isMesh) child.material.map = texture;
-
-            //     });
-
-            //     // object.position.y = - 95;
-            //     scene.add(object);
-
-            // };
+            // This final manager onLoad would be nice if I had many different things / assets I loaded...
+            // but I am only loading one OBJ file, only one MTL file... 
+            // ... manager.onLoad = function () {...          
 
 
             manager.onProgress = function (item, loaded, total) {
@@ -93,10 +164,6 @@
 
             };
 
-            // texture
-
-            const textureLoader = new THREE.TextureLoader(manager);
-            const texture = textureLoader.load('textures/uv_grid_opengl.jpg');
 
             // model
 
@@ -118,42 +185,31 @@
 
             const materialsLoader = new MTLLoader(manager);
 
-            materialsLoader.load('models/obj/Modeling Water Polo for Export.obj/d2e8bc61-6dd1-4554-b874-13b5364d656e.mtl',
-                /* 
-                // onLoad 
-                // onLoad — (optional) A function to be called after the loading is successfully completed. The function receives the loaded MTLLoader.MaterialCreator instance.
-                */
-                function (materialsCreator) {
+            new Promise((resolve, reject) => {
+                materialsLoader.load('models/obj/Modeling Water Polo for Export.obj/d2e8bc61-6dd1-4554-b874-13b5364d656e.mtl', resolve, onLoadProgress, reject);
+            })
+                .then((materialsCreator) => {
 
                     // https://threejs.org/docs/#examples/en/loaders/OBJLoader.setMaterials
                     objLoader.setMaterials(materialsCreator);
 
+                    return new Promise((resolve, reject) => {
+                        objLoader.load('models/obj/Modeling Water Polo for Export.obj/d2e8bc61-6dd1-4554-b874-13b5364d656e.obj', resolve, onLoadProgress, reject);
+                    })
 
-                    // objLoader.load( 'models/obj/male02/male02.obj', function ( obj ) {
-                    objLoader.load('models/obj/Modeling Water Polo for Export.obj/d2e8bc61-6dd1-4554-b874-13b5364d656e.obj', function (obj) {
+                })
+                .then(obj => {
 
-                        object = obj;
+                    object = obj;
+
+                    scene.add(object);
+
+                })
+                .catch(onLoadError);
 
 
-                        // object.traverse(function (child) {
-
-                        //     // if (child.isMesh) child.material.map = texture;
-
-                        // });
-
-                        // object.position.y = - 95;
-                        scene.add(object);
-
-                    }, onLoadProgress, onLoadError);
-
-                }, onLoadProgress, onLoadError);
-
-            renderer = new THREE.WebGLRenderer();
-            renderer.setPixelRatio(window.devicePixelRatio);
-            renderer.setSize(window.innerWidth, window.innerHeight);
             container.appendChild(renderer.domElement);
 
-            document.addEventListener('mousemove', onDocumentMouseMove, false);
 
             //
 
@@ -173,39 +229,18 @@
 
         }
 
-        function onDocumentMouseMove(event) {
-
-            mouseX = (event.clientX - windowHalfX) / 2;
-            mouseY = (event.clientY - windowHalfY) / 2;
-
-        }
-
-        //
 
         function animate() {
 
             requestAnimationFrame(animate);
+            // controls.update();
             render();
 
         }
 
+
         function render() {
-            /// TODO Don't let camera x / y position drift too far , clamp it to min/max
-            camera.position.x += (mouseX - camera.position.x) * .05 / 5;
-            camera.position.y += (- mouseY - camera.position.y) * .05 / 5;
-
-            // console.log(camera.position.x, camera.position.y);
-            if (Math.abs(camera.position.x) > threshholdX) {
-                camera.position.x = threshholdX * Math.abs(camera.position.x) / camera.position.x;
-            }
-            if (Math.abs(camera.position.y) > threshholdY) {
-                camera.position.y = threshholdY * Math.abs(camera.position.y) / camera.position.y;
-            }
-
-            camera.lookAt(scene.position);
-
             renderer.render(scene, camera);
-
         }
 
     </script>
