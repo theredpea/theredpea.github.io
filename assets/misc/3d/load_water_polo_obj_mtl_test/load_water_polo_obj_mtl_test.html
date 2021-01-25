@@ -84,34 +84,57 @@
             scene.add(ambientLight);
 
             const pointLight = new THREE.PointLight(0xffffff, 1); //0.8);
-            // OH because we added the PointLight to the camera, it always looks like the camera is shining light at what it looks at!
+            // OH because we added the PointLight to the camera, it always looks like the camera 
+            // is shining light at what it looks at!
             camera.add(pointLight);
             const v = new THREE.Vector3();
-
             camera.getWorldDirection(v);
-            console.log(v);
+            // Vector3
+            // x: -0
+            // y: -0
+            // z: -1
+            // .getWorldDirection ( target : Vector3 ) : Vector3
+            // target — the result will be copied into this Vector3.
+
+            // Returns a Vector3 representing the world space 
+            // direction in which the camera is looking. 
+            // (Note: A camera looks down its local, negative z-axis).
+            // (Note: A camera looks down its local, negative z-axis).
+            console.log('world direction before camera.lookAt', v);
 
             // Rotates the object to face a point in world space.
             // const cameraLookAt = new THREE.Vector3(12, -10, 20);
             // const cameraLookAt = new THREE.Vector3(0, 10, 0); //12, -10, 20);
             // const cameraLookAt = new THREE.Vector3(); //0, 10, 0); //12, -10, 20);
-            const poloPoolWidthMeters = 20;
-            const poloPoolLengthMeters = 30;
-            const poloPoolHeight = 10;
+            const poloPoolWidthMeters = 10;
+            const poloPoolLengthMeters = 10;
+            // const poloPoolHeight = 3;
+            const poloPoolAboveHover = 10;
 
-            const cameraLookAt = new THREE.Vector3(poloPoolWidthMeters / 2, poloPoolHeight, -poloPoolLengthMeters / 2); //0, 10, 0); //12, -10, 20);
+            const cameraLookAt = new THREE.Vector3(
+                poloPoolWidthMeters / 2,
+                poloPoolAboveHover,
+                -poloPoolLengthMeters / 2
+            );
 
             // camera.position.z = 20;
             // camera.position.x = -8;
             // camera.position.y = 10;
             camera.position.copy(cameraLookAt);
             camera.position.y = camera.position.y * 2;
-            camera.lookAt(cameraLookAt); //12, -10, 20);
             // can look wherever, but the OrbitControls later will use controls.target.set
+            camera.lookAt(cameraLookAt); //12, -10, 20);
             // camera.lookAt(0, 0, 0); //12, -10, 20);
             const v2 = new THREE.Vector3();
             camera.getWorldDirection(v2);
-            console.log(v2);
+
+            // .getWorldDirection ( target : Vector3 ) : Vector3
+            // target — the result will be copied into this Vector3.
+
+            // Returns a Vector3 representing the world space 
+            // direction in which the camera is looking. 
+            // (Note: A camera looks down its local, negative z-axis).
+            console.log('world direction after camera.lookAt', v);
 
             renderer = new THREE.WebGLRenderer();
             renderer.setPixelRatio(window.devicePixelRatio);
@@ -123,9 +146,9 @@
             // controls.target.set(0, 5, 0);
             // even if it is the same place you wanted the camera to look at...
             controls.target.copy(cameraLookAt);
+            controls.update();
             // https://github.com/mrdoob/three.js/issues/10561
 
-            controls.update();
 
             {
                 const sphereRadius = 0.5;
