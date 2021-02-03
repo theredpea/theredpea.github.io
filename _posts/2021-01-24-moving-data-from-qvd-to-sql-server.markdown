@@ -40,3 +40,9 @@ Allow the Input Columns to determine the resulting Output Columns in a *new tabl
 I use a `JOIN` in SQL Server (see earlier comment, I ran into limits trying to JOIN directly in the Qlik Sense load script)
 
  - Consider using `INSERT` instead of `SELECT ... INTO` (see Stack Overflow answer about this)
+
+
+# Simplify the Key
+In my case, I was joining a large table ("Main") to a small lookup table ("Lookup") via a "bridge" table ("Bridge"). The key to join the "Main" table to the "Bridge" ("MainBridgeKey") was at a very low-level of detail; and the resulting JOIN increases rowcount from 300K -> 300M
+
+I used  `HASHBYTES` function to reduce the "Main" table into a "SimplifiedMain" 
