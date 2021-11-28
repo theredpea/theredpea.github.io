@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Moving data from QVD to SQL Server"
-date:   2020-12-20 11:22:00 -0700
+date:   2021-01-24 11:22:00 -0700
 excerpt_separator: <!--more-->
 ---
 

@@ -40,4 +40,8 @@ Some inspiration:
  - Matthew Kay's [site](http://blog.mjskay.com/)
  - Duy Nguyen's [site](https://duyknguyen.com/profile/)
  - Andre Olieira's [site](https://andrepoliveira.com/blog/)
+ - Mathieu Jouhet's [site](http://hello-mat.com/)
+ - Nicholas Rougeux's [site](http://hello-mat.com/)
+ - [Matt Henderson](https://twitter.com/matthen2)
+ - Scott Partridge's [site](https://www.jevaart.com/)
 {% include social.html %}
