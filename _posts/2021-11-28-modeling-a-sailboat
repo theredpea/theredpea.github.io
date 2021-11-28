@@ -22,3 +22,8 @@ There are many *sailboats*. But a single sailboat could have many different *sai
  - One important quality of a sail is its surface area. More surface area means more wind-power can push the sail and propel the boat. The Lagoon 42 can work with mainsails between 592 sqft and 635 sqft.
   - <del>I made a mistake on our t-shirt; the "head" of the mainsail.</del> It wasn't a mistake; the ["square-top"](https://www.northsails.com/sailing/en/products/square-top-racing-mainsails) is one option of mainsail (where the "head" of the sail is "chopped off"). The "square-top" apparently has a *larger* surface area, and is more *efficient*
  - The Lagoon 42 foresail is a "Code 0" type (ImproveSailing describes a "Code 0" [type of sail](https://improvesailing.com/guides/sail-types#downwind-sails)). The marketing photos show a nice turquoise "Code 0" foresail with "42" in large letters. Apparently the "Code 0" sail is optional; "Code 0" sails are good for light-wind sailing, and is *larger* than the mainsail -- the "Code 0" is 732 sqft.
+# 3D Modeling a Sailboat
+I use Sketchup to model in 3D. There are some great tutorials on building a boat in Sketchup
+ - [The SketchupEssentials](https://www.youtube.com/watch?v=mzNPzPho79k) makes a simple boat using  the Curviloft extension
+ - [Pete's 3D Design](https://www.youtube.com/watch?v=-Un7DkKyy04) improves on the boat "hull", doesn't use any extension (but plenty of triangles!)
+ - [Designer Hacks](https://www.youtube.com/watch?v=GBccYg2Xf64) deconstructs the "Boat base" model from 3D warehouse using the Draw > Sandbox > From Contour tools
