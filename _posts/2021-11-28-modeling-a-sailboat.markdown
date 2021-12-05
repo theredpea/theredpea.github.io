@@ -5,7 +5,7 @@ date:   2021-11-28 10:12:00 -0700
 excerpt_separator: <!--more-->
 ---
 
-I'm going to sail the British Virgin Islands with some friends soon. I wanted to learn more about sailing, so I started by trying to model a sailboat.
+I'm going to sail the British Virgin Islands with some friends soon. I wanted to learn more about sailing, so I started by trying to model a sailboat...
 
 <!--more-->
 
@@ -16,7 +16,7 @@ Here are some helpful resources
  - [ImproveSailing](https://improvesailing.com/) has a ["Sails Guide"](https://improvesailing.com/guides/sail-types) which describes sail basics and many sail types (like "spinnaker" vs "genoa")
  
 # Sailboat vs Sail
-There are many *sailboats*. But a single sailboat could have many different *sail* configurations. We will be sailing a [Lagoon 42](https://www.cata-lagoon.com/en/42) (more photos [here](https://passagenautical.com/new-inventory/lagoon-42-catamaran/)), which is a catamaran (most boats have *one* part that sits in the water (the "hull"; a "mono-hull"); a catamaran has *two* parts that sit in the water("two hulls")). (I think two hulls makes the catamaran more spacious and saling more stable than a mono-hull.)
+There are many type of *sailboats*. But a single type of sailboat could have many different types of *sail configuration*. We will be sailing a [Lagoon 42](https://www.cata-lagoon.com/en/42) (more photos [here](https://passagenautical.com/new-inventory/lagoon-42-catamaran/)), which is a catamaran (most boats have *one* part that sits in the water (the "hull"; a "mono-hull"); a catamaran has *two* parts that sit in the water("two hulls")). (I think two hulls makes the catamaran more spacious and saling more stable than a mono-hull.)
 
  - A basic yacht configuration includes *foresail* (at the "front" or "fore" of the boat) and *mainsail* (at the "back" or "aft" of the boat).
  - One important quality of a sail is its surface area. More surface area means more wind-power can push the sail and propel the boat. The Lagoon 42 can work with mainsails between 592 sqft and 635 sqft.
