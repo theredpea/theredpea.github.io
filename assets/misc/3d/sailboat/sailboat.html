@@ -30,13 +30,15 @@
         import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r123/three.module.js';
         // import * as THREE from '../build/three.module.js';
 
-        import Stats from 'https://threejs.org/examples/jsm/libs/stats.module.js';
+        // import Stats from 'https://threejs.org/examples/jsm/libs/stats.module.js';
+        import Stats from 'https://cdn.jsdelivr.net/gh/mrdoob/three.js/examples/jsm/libs/stats.module.js';
         // it's not a module:
         // Uncaught SyntaxError: The requested module 'https://cdn.jsdelivr.net/npm/three-stats@1.0.1/dist/index.min.js' does not provide an export named 'default'
         // import Stats from 'https://cdn.jsdelivr.net/npm/three-stats@1.0.1/dist/index.min.js';
         // import Stats from './jsm/libs/stats.module.js';
 
-        import { ColladaLoader } from 'https://threejs.org/examples/jsm/loaders/ColladaLoader.js';
+        import { ColladaLoader } from 'https://cdn.jsdelivr.net/gh/mrdoob/three.js/examples/jsm/loaders/ColladaLoader.js';
+        // import { ColladaLoader } from 'https://threejs.org/examples/jsm/loaders/ColladaLoader.js';
         // import ColladaLoader from 'https://cdn.jsdelivr.net/npm/collada-loader-three@0.0.3/index.min.js';
         // import ColladaLoader from 'https://cdn.jsdelivr.net/npm/three-collada-loader@0.0.1/index.min.js';
         // Uncaught SyntaxError: The requested module 'https://cdn.jsdelivr.net/npm/three-collada-loader@0.0.1/index.min.js' does not provide an export named 'ColladaLoader'
@@ -65,7 +67,7 @@
             y = 5;
             camera.position.set(x, y, z);
             // y = 3;
-            camera.lookAt(0, y/2, 0);
+            camera.lookAt(0, y / 2, 0);
 
             scene = new THREE.Scene();
             scene.background = null;
@@ -92,11 +94,11 @@
 
             //
 
-            const ambientLight = new THREE.AmbientLight(0xcccccc, 0.4);
+            const ambientLight = new THREE.AmbientLight(0xcccccc, 0.6);
             scene.add(ambientLight);
 
             const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
-            directionalLight.position.set(1, 1, 0).normalize();
+            directionalLight.position.set(1, 1, 1).normalize();
             scene.add(directionalLight);
 
             //
@@ -111,7 +113,7 @@
             //
 
             stats = new Stats();
-            container.appendChild(stats.dom);
+            // container.appendChild(stats.dom);
 
             //
 
