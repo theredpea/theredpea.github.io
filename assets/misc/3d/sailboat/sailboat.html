@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>three.js webgl - collada</title>
+    <title>three.js webgl - sailboat</title>
     <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
@@ -44,7 +44,7 @@
         // import { ColladaLoader } from './jsm/loaders/ColladaLoader.js';
 
         let container, stats, clock;
-        let camera, scene, renderer, elf;
+        let camera, scene, renderer, sailboat;
 
         init();
         animate();
@@ -54,8 +54,18 @@
             container = document.getElementById('container');
 
             camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 2000);
-            camera.position.set(8, 10, 8);
-            camera.lookAt(0, 3, 0);
+
+            // camera.position.set(8, 10, 8);
+            /*
+            .set ( x : Float, y : Float, z : Float ) : this
+            Sets the x, y and z components of this vector.
+            */
+            let x, y, z;
+            x = z = 15;
+            y = 5;
+            camera.position.set(x, y, z);
+            // y = 3;
+            camera.lookAt(0, y/2, 0);
 
             scene = new THREE.Scene();
             scene.background = null;
@@ -66,7 +76,7 @@
 
             const loadingManager = new THREE.LoadingManager(function () {
 
-                scene.add(elf);
+                scene.add(sailboat);
 
             });
 
@@ -76,7 +86,7 @@
             // loader.load('./models/collada/elf/elf.dae', function (collada) {
             loader.load('./sailboat.dae', function (collada) {
 
-                elf = collada.scene;
+                sailboat = collada.scene;
 
             });
 
@@ -93,7 +103,7 @@
 
             // renderer = new THREE.WebGLRenderer();
             // https://stackoverflow.com/a/60999435/1175496
-            renderer = new THREE.WebGLRenderer({alpha: true});
+            renderer = new THREE.WebGLRenderer({ alpha: true });
             renderer.setPixelRatio(window.devicePixelRatio);
             renderer.setSize(window.innerWidth, window.innerHeight);
             container.appendChild(renderer.domElement);
@@ -131,9 +141,9 @@
 
             const delta = clock.getDelta();
 
-            if (elf !== undefined) {
+            if (sailboat !== undefined) {
 
-                elf.rotation.z += delta * 0.5;
+                sailboat.rotation.z += delta * 0.5;
 
             }
 

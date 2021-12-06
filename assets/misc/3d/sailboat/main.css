@@ -1,7 +1,8 @@
 body {
   margin: 0;
   /* background-color: #000; */
-  background-color: #00dcff;
+  /* background-color: #00dcff; */
+  background: radial-gradient(circle, rgba(55,237,255,1) 60%, rgba(0,148,186,1) 100%);
 
   color: #fff;
   font-family: Monospace;
