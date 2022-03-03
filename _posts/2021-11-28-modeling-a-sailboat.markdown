@@ -27,3 +27,5 @@ I use Sketchup to model in 3D. There are some great tutorials on building a boat
  - [The SketchupEssentials](https://www.youtube.com/watch?v=mzNPzPho79k) makes a simple boat using  the Curviloft extension
  - [Pete's 3D Design](https://www.youtube.com/watch?v=-Un7DkKyy04) improves on the boat "hull", doesn't use any extension (but plenty of triangles!)
  - [Designer Hacks](https://www.youtube.com/watch?v=GBccYg2Xf64) deconstructs the "Boat base" model from 3D warehouse using the Draw > Sandbox > From Contour tools
+
+I [imported the Collada file (`.dae` extension) of the sailboat model to Sketchfab](https://skfb.ly/o8977). Sketchfab also supports `.obj` extension among other types of import, and Sketchfab supports [the `.glTF` format ("Graphics Language Transmission Format")](https://docs.fileformat.com/3d/gltf/) (more information on the history of formats and [the advantages of the `.glTF`format here](https://godotengine.org/article/we-should-all-use-gltf-20-export-3d-assets-game-engines), where I learned about the [Godot 2D/3D game engine](https://docs.godotengine.org/en/stable/getting_started/step_by_step/intro_to_the_editor_interface.html)!)
