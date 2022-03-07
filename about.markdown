@@ -7,9 +7,9 @@ permalink: /about/
 ![Nate Anderson personal pic](/assets/images/headshot/nate.jpg "Nate Anderson personal pic")
 
 
-Hi, I'm Nate Anderson (full name Nathaniel Muir Anders). 
+Hi, I'm Nate Anderson (full name Nathaniel Muir Anderson). 
 
-I'm a web-developer originally from Kāneʻohe, Hawaiʻi. I live in Englewood, Colorado with my husband, 2 dogs, and 2 cats.
+I'm a web-developer originally from Kāneʻohe, Hawaiʻi. I live in Englewood, Colorado with my husband, 2 dogs, and 1 cat.
 
 I graduated from USC where I studied Interactive Media and Accounting. These days I'm interested in making fun apps and interesting projects (especially data visualization).
 
