@@ -92,6 +92,8 @@ group :jekyll_plugins do
   gem 'jekyll-avatar'
   gem 'jekyll-github-metadata'
   gem 'jekyll-feed'
+  gem 'jekyll-target-blank'
+
 end
 
 

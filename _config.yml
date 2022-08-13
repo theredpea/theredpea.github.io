@@ -71,6 +71,7 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: theredpea
 github_username:  theredpea
 
+future: true
 #CNAME record
 # https://support.google.com/domains/answer/9211383?hl=en
 #Subdomain forwarding
@@ -117,6 +118,10 @@ plugins:
   #  GitHub Metadata: No GitHub API authentication could be found. Some fields may be missing or have incorrect data.
   - jekyll-github-metadata
   - jekyll-feed
+  # https://keith-mifsud.me/projects/jekyll-target-blank
+  # Could not find gem 'jekyll-target-blank x64-mingw32' in any of the gem sources listed in your Gemfile.
+  # https://stackoverflow.com/a/65911834/1175496
+  - jekyll-target-blank
 
 # Exclude from processing.
 # The following items will not be processed, by default.
