@@ -44,4 +44,6 @@ Some inspiration:
  - Nicholas Rougeux's [site](http://hello-mat.com/)
  - [Matt Henderson](https://twitter.com/matthen2)
  - Scott Partridge's [site](https://www.jevaart.com/)
+ - Brian Weinstein's [site](https://www.brianweinstein.co/)
+ - JGDMiles' [site](https://jdgmiles.github.io/)
 {% include social.html %}
