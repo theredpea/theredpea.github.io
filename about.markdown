@@ -46,4 +46,5 @@ Some inspiration:
  - Scott Partridge's [site](https://www.jevaart.com/)
  - Brian Weinstein's [site](https://www.brianweinstein.co/)
  - JGDMiles' [site](https://jdgmiles.github.io/)
+ - Ian Kettlewell's [code tools/games](https://ianjk.com/about/)
 {% include social.html %}
