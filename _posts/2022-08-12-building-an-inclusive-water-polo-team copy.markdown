@@ -23,11 +23,12 @@ The first real step in converting to Rust is to create a Rust project. The [Hell
          Created binary (application) `rust-srt-combiner` package
 
 Our new `cargo` project comes with a `Cargo.toml` file. The [`*.toml` format is easy to read](https://toml.io/en/), but we should add a [`description` property](https://doc.rust-lang.org/cargo/reference/manifest.html#the-description-field) to credit where credit's due. Notice our description property points to the original subtitles-combiner git repo:
+
     [package]
     name = "rust-srt-combiner"
     version = "0.1.0"
     edition = "2021"
-    # Added
+    # the description we added vvvvvvvvvvvvvvvvvvvvvvvvvvv
     description = "A Rust translation of this project https://github.com/gterzian/Subtitles-combiner"
     
     [dependencies]
@@ -57,7 +58,10 @@ How do we translate this Python function to Rust?
                    yield striped.decode('utf-8')    
 
 The Rust book teaches us how to [read a file](https://rust-book.cs.brown.edu/ch12-02-reading-a-file.html) using `fs::read_to_string(file_path)...`. Reading the entire file to a string is a good start, but I want to read each line in the file so I can [iterate](https://stackoverflow.com/a/2776865/1175496) each line in the subtitle file, so we can combine with each line in another subtitle file.
- Rust's [std::io::BufReader](https://stackoverflow.com/a/45882510/1175496)  and the [`.lines()` method](https://doc.rust-lang.org/std/io/trait.BufRead.html#method.lines) are a good way to do that.
+
+Rust's [std::io::BufReader](https://stackoverflow.com/a/45882510/1175496)  and the [`.lines()` method](https://doc.rust-lang.org/std/io/trait.BufRead.html#method.lines) are a good way to do that. The "Rust By Example" book has a [beginner-friendly method](https://doc.rust-lang.org/rust-by-example/std_misc/file/read_lines.html#beginner-friendly-method) and an [efficient method](https://doc.rust-lang.org/rust-by-example/std_misc/file/read_lines.html#efficient-method)
+
+
 
 #### Translating `read_files`
 ...TODO...
@@ -67,3 +71,23 @@ The Rust book teaches us how to [read a file](https://rust-book.cs.brown.edu/ch1
 
 #### Translating `write_combined_file`
 ...TODO...
+
+
+
+## Important Differences
+ - [`String` vs `str`](https://stackoverflow.com/questions/24158114/what-are-the-differences-between-rusts-string-and-str#:~:text=A%20Rust%20String%20is%20like,contents%20of%20std%3A%3Astring%20.)
+   - > `String` is the dynamic heap string type, like `Vec`: use it when you need to **own or modify your string data**. `str` is an immutable sequence of UTF-8 bytes of dynamic length somewhere in memory. Since the size is unknown, one can only handle it behind a pointer. This means that `str` most commonly2 appears as `&str`
+ - [`Reader` vs `BufReader`](https://doc.rust-lang.org/std/io/struct.BufReader.html)
+  - >  A `BufReader<R>` performs large, infrequent reads on the underlying `Read` and maintains an in-memory buffer of the results... `BufReader<R>` can improve the speed of programs that make **small and repeated read calls** to the same file or network socket. It does not help when reading very large amounts at once, or reading just one or a few times
+ - [`BufReader` vs `BufRead`](https://stackoverflow.com/questions/39464237/whats-the-idiomatic-way-to-reference-bufreader-bufwriter-when-passing-it-between)
+  -  [`BufRead` is a *trait*](https://doc.rust-lang.org/std/io/trait.BufRead.html), whereas [`BufReader` is a *struct*](https://doc.rust-lang.org/std/io/struct.BufReader.html). Traits are similar to interfaces in other languages, [Rust  traits define shared behavior.](https://doc.rust-lang.org/book/ch10-02-traits.html). The `BufReader` strict [implements the `BufRead` trait](https://doc.rust-lang.org/std/io/struct.BufReader.html#impl-BufReader%3CR%3E)
+  -  [`struct` vs `type`](https://users.rust-lang.org/t/difference-between-type-and-struct/29733/4)
+   -  > A struct **is** a type-- "type" is the more general category; struct is one kind of type.
+
+
+## Other Resources
+ - [Rust Cookbook](https://rust-lang-nursery.github.io/rust-cookbook/file/read-write.html)
+ - [Rust Book (MIT)](https://web.mit.edu/rust-lang_v1.25/arch/amd64_ubuntu1404/share/doc/rust/html/book/first-edition/getting-started.html)
+ - [Rust by Example](https://doc.rust-lang.org/rust-by-example/std_misc/file/read_lines.html#beginner-friendly-method)
+ - [Rust Lang User forum](https://users.rust-lang.org/)
+ - [Rust Book (Brandeis)](https://www.cs.brandeis.edu/~cs146a/rust/rustbyexample-02-21-2015/path.html)
