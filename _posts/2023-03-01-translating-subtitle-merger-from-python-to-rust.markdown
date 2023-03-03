@@ -65,8 +65,10 @@ Python's [`with` statement](https://docs.python.org/3/reference/compound_stmts.h
 
 ##### Taking it one line at a time
 The Python file object inherits from `IOBase`, which means the file object is a context manager and also that the file **can be iterated** "over yielding lines in a stream". The Rust book teaches us how to read a the [entire file into a string](https://rust-book.cs.brown.edu/ch12-02-reading-a-file.html) using `fs::read_to_string(file_path)...`. We don't want one string -- we want to iterate over each [iterate](https://stackoverflow.com/a/2776865/1175496) each line in one subtitle file (so we can combine with lines in another subtitle file). Rust's [std::io::BufReader](https://stackoverflow.com/a/45882510/1175496) and the [`.lines()` method](https://doc.rust-lang.org/std/io/trait.BufRead.html#method.lines) give us a way to iterate lines. You could also make a custom `BufReader` which implement `Iterator` so you can *iterate the `BufReader` directly*. Not only is this closer to the Python approach (`for line in my_reader`), but it also means you don't have to "allocate a string for each line". 
-#### Truthy and falsey
-Python supports the idea of ["truthy" and "falsey"](https://stackoverflow.com/questions/39983695/what-is-truthy-and-falsy-how-is-it-different-from-true-and-false) which means `if line:` will not execute if `line` is an empty string. An [empty Python string is considered false](https://docs.python.org/3/library/stdtypes.html#truth-value-testing) -- so is any empty Python sequence and collection. Rust `if` statements don't work like Python's; if the condition isn't a `bool`, you'll get an error. ["Unlike languages such as Ruby and JavaScript, Rust will not automatically try to convert non-Boolean types to a Boolean."](https://doc.rust-lang.org/book/ch03-05-control-flow.html). Rust prefers explicitness, so instead of relying on a language feature to treat an empty sequence as false (aka "falsey"), we should explicitly check the length of the string to see if it's 0.
+
+##### Truthy and falsey
+Python supports the idea of ["truthy" and "falsey"](https://stackoverflow.com/questions/39983695/what-is-truthy-and-falsy-how-is-it-different-from-true-and-false) which means `if line:` will not execute if `line` is an empty string. An [empty Python string is considered false](https://docs.python.org/3/library/stdtypes.html#truth-value-testing) or "falsey"-- so is *any empty Python sequence/collection*. Rust `if` statements don't work like Python's; if the condition isn't a `bool`, you'll get an error. ["Unlike languages such as Ruby and JavaScript, Rust will not automatically try to convert non-Boolean types to a Boolean."](https://doc.rust-lang.org/book/ch03-05-control-flow.html). Rust prefers explicitness, so instead of relying on a language feature to treat an empty sequence as false (aka "falsey"), we should explicitly check the length of the string to see if it's 0.
+
 ##### Decoding from Unicode
 The Python `read_lines` function 
 TODO Compare Python 2 and Python 3
@@ -98,7 +100,7 @@ The file object is iterable, but the `read_lines` Python function uses the `yiel
   -  [`BufRead` is a *trait*](https://doc.rust-lang.org/std/io/trait.BufRead.html), whereas [`BufReader` is a *struct*](https://doc.rust-lang.org/std/io/struct.BufReader.html). Traits are similar to interfaces in other languages, [Rust  traits define shared behavior.](https://doc.rust-lang.org/book/ch10-02-traits.html). The `BufReader` strict [implements the `BufRead` trait](https://doc.rust-lang.org/std/io/struct.BufReader.html#impl-BufReader%3CR%3E)
   -  [`struct` vs `type`](https://users.rust-lang.org/t/difference-between-type-and-struct/29733/4)
    -  > A struct **is** a type-- "type" is the more general category; struct is one kind of type.
-
+  - [`.unwrap()` vs `?`](https://stackoverflow.com/questions/42917566/what-is-this-question-mark-operator-about#comment113203173_63877649) Rust deals with the `Result`
 
 ## Other Resources
  - [Rust Cookbook](https://rust-lang-nursery.github.io/rust-cookbook/file/read-write.html)
