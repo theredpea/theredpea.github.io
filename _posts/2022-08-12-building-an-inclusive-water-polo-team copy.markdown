@@ -46,7 +46,7 @@ subtitles-combiner defines these four functions
 We'll translate them starting these functions from the inside out. 
 
 #### Translating `read_lines`
-`read_lines` takes a single file, opens the file in read-mode ([`rt`](https://stackoverflow.com/a/23051095/1175496)) and yields a result for every nonempty line -- the `yield` means `read_lines` is a [generator](https://towardsdatascience.com/basics-of-python-generators-a47b3cab1a23). Indeed the `subtitles-combiner` project is described as "an example of using generators for creating data processign pipelines", and links to [this presentation on Python Generator Hacking](http://www.slideshare.net/dabeaz/python-generator-hacking).
+`read_lines` takes a single file, opens the file in read-mode ([`rt`](https://stackoverflow.com/a/23051095/1175496)) and yields a result for every nonempty line -- the `yield` means `read_lines` is a [generator](https://towardsdatascience.com/basics-of-python-generators-a47b3cab1a23). In fact the `subtitles-combiner` project is described as "an example of using generators for creating data processign pipelines", and links to [this presentation on Python Generator Hacking](http://www.slideshare.net/dabeaz/python-generator-hacking).
 
 How do we translate this Python function to Rust?
 
@@ -57,9 +57,22 @@ How do we translate this Python function to Rust?
                if striped:
                    yield striped.decode('utf-8')    
 
-The Rust book teaches us how to [read a file](https://rust-book.cs.brown.edu/ch12-02-reading-a-file.html) using `fs::read_to_string(file_path)...`. Reading the entire file to a string is a good start, but I want to read each line in the file so I can [iterate](https://stackoverflow.com/a/2776865/1175496) each line in the subtitle file, so we can combine with each line in another subtitle file.
+##### Filepaths are more than strings
+I thought Python's [`open(file...)`](https://docs.python.org/3/library/functions.html#open) function accepts only a  **string** argument containing the filepath, but it accepts a **["path-like object"](https://docs.python.org/3/glossary.html#term-path-like-object)**. So does Rust's `File::open(path...)`; the argument `path` uses generic type `P`, where `<P: AsRef<Path>>` -- notice the use of the [`Path` struct](https://doc.rust-lang.org/std/path/struct.Path.html) which Rust describes as "a slice of a path (akin to `str`)". Rust accepts a simple `String` because the `String` [implements the `AsRef<Path>` trait](https://doc.rust-lang.org/std/string/struct.String.html#impl-AsRef%3CPath%3E-for-String). A file "path" is more than just a simple string in both Python and Rust because a file path *depends on the operating system.*
 
-Rust's [std::io::BufReader](https://stackoverflow.com/a/45882510/1175496)  and the [`.lines()` method](https://doc.rust-lang.org/std/io/trait.BufRead.html#method.lines) are a good way to do that. The "Rust By Example" book has a [beginner-friendly method](https://doc.rust-lang.org/rust-by-example/std_misc/file/read_lines.html#beginner-friendly-method) and an [efficient method](https://doc.rust-lang.org/rust-by-example/std_misc/file/read_lines.html#efficient-method)
+##### Close the file when you're done
+Python's [`with` statement](https://docs.python.org/3/reference/compound_stmts.html#the-with-statement) "wraps the execution of a block with methods defined by a context manager". That means Python will always call `__exit__()` on your context. When the context is a file, Python will close the file when you're done (when the `with` block ends). That's because a Python file inherits from the [`IOBase` class](https://docs.python.org/3/library/io.html#io.IOBase), which implements the `__exit__` method. Rust closes the file [using the file's `drop` function](https://stackoverflow.com/a/28696370/1175496). In Rust the `drop` function is known as the object's [`destructor`](https://stackoverflow.com/a/28696370/1175496) and the object's `destructor` "gives the type time to somehow finish what it was doing". Rust destructor is called automatically ["when an initialized variable or temporary goes out of scope"](https://doc.rust-lang.org/reference/destructors.html).
+
+##### Taking it one line at a time
+The Python file object inherits from `IOBase`, which means the file object is a context manager and also that the file **can be iterated** "over yielding lines in a stream". The Rust book teaches us how to read a the [entire file into a string](https://rust-book.cs.brown.edu/ch12-02-reading-a-file.html) using `fs::read_to_string(file_path)...`. We don't want one string -- we want to iterate over each [iterate](https://stackoverflow.com/a/2776865/1175496) each line in one subtitle file (so we can combine with lines in another subtitle file). Rust's [std::io::BufReader](https://stackoverflow.com/a/45882510/1175496) and the [`.lines()` method](https://doc.rust-lang.org/std/io/trait.BufRead.html#method.lines) give us a way to iterate lines. You could also make a custom `BufReader` which implement `Iterator` so you can *iterate the `BufReader` directly*. Not only is this closer to the Python approach (`for line in my_reader`), but it also means you don't have to "allocate a string for each line". 
+#### Truthy and falsey
+Python supports the idea of ["truthy" and "falsey"](https://stackoverflow.com/questions/39983695/what-is-truthy-and-falsy-how-is-it-different-from-true-and-false) which means `if line:` will not execute if `line` is an empty string. An [empty Python string is considered false](https://docs.python.org/3/library/stdtypes.html#truth-value-testing) -- so is any empty Python sequence and collection. Rust `if` statements don't work like Python's; if the condition isn't a `bool`, you'll get an error. ["Unlike languages such as Ruby and JavaScript, Rust will not automatically try to convert non-Boolean types to a Boolean."](https://doc.rust-lang.org/book/ch03-05-control-flow.html). Rust prefers explicitness, so instead of relying on a language feature to treat an empty sequence as false (aka "falsey"), we should explicitly check the length of the string to see if it's 0.
+##### Decoding from Unicode
+The Python `read_lines` function 
+TODO Compare Python 2 and Python 3
+
+##### Too lazy to be lazy
+The file object is iterable, but the `read_lines` Python function uses the `yield` keyword. In Python the `yield` keyword creates a generator. Generators can be iterated (because generators "implement the iterator protocol"). So `read_lines` is a "generator function" ; calling `read_liens` immediately returns a generator-iterator. The code in the generator function ["only runs when called by `next(g)` or `g.send(v)`, and execution is suspended when `yield` is encountered"](https://stackoverflow.com/a/45727729/1175496). Why use a generator? when ["you don't know if you are *going to need all results*, or where you *don't want to allocate the memory for all results* at the same time."](https://stackoverflow.com/a/102632/1175496) So maybe we only want to translate the first 5 lines  of dialog in our .srt files -- no need to read the entire file for that! So does Rust have generators? Using the `yield` keyword technique requires using experimental/unstable features `#![feature(generators, generator_trait)]`. Instead of using the experimental Rust `yield` keyword, you could explicitly [implement the Iterator protocol (i.e. define the `fn next($mut self)` function)](https://stackoverflow.com/questions/16421033/lazy-sequence-generation-in-rust). Our Rust function already has something that implements the Iterator protocol, so I won't worry about translating to an explicit "generator" in Rust! 
 
 
 
@@ -68,6 +81,8 @@ Rust's [std::io::BufReader](https://stackoverflow.com/a/45882510/1175496)  and t
 
 #### Translating `combine`
 ...TODO...
+
+##### Zipping it up
 
 #### Translating `write_combined_file`
 ...TODO...

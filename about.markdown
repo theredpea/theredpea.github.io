@@ -47,4 +47,5 @@ Some inspiration:
  - Brian Weinstein's [site](https://www.brianweinstein.co/)
  - JGDMiles' [site](https://jdgmiles.github.io/)
  - Ian Kettlewell's [code tools/games](https://ianjk.com/about/)
+ - Kai Krause's [site](http://kai.sub.blue/)
 {% include social.html %}
