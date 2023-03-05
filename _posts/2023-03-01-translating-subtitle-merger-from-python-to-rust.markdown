@@ -19,19 +19,23 @@ Before I began I installed Rust. I've been using the [Rust Book experiment](http
 
 The first real step in converting to Rust is to create a Rust project. The [Hello, Cargo! chapter](https://rust-book.cs.brown.edu/ch01-03-hello-cargo.html) teaches us how to create a new project using `cargo new`. Let's name our project the `rust-srt-combiner`:
 
-    $ cargo new rust-srt-combiner
-         Created binary (application) `rust-srt-combiner` package
+```
+$ cargo new rust-srt-combiner
+        Created binary (application) `rust-srt-combiner` package
+```
 
 Our new `cargo` project comes with a `Cargo.toml` file. The [`*.toml` format is easy to read](https://toml.io/en/), but we should add a [`description` property](https://doc.rust-lang.org/cargo/reference/manifest.html#the-description-field) to credit where credit's due. Notice our description property points to the original subtitles-combiner git repo:
 
-    [package]
-    name = "rust-srt-combiner"
-    version = "0.1.0"
-    edition = "2021"
-    # the description we added vvvvvvvvvvvvvvvvvvvvvvvvvvv
-    description = "A Rust translation of this project https://github.com/gterzian/Subtitles-combiner"
-    
-    [dependencies]
+```toml
+[package]
+name = "rust-srt-combiner"
+version = "0.1.0"
+edition = "2021"
+# the description we added vvvvvvvvvvvvvvvvvvvvvvvvvvv
+description = "A Rust translation of this project https://github.com/gterzian/Subtitles-combiner"
+
+[dependencies]
+```
 
 ### Translating `combine.py`
 Next we could create the Rust equivalent of a "Python package" (note subtitles-combiner has a Python [__init__.py file](https://stackoverflow.com/questions/448271/what-is-init-py-for)), or we could focus on the core logic in the `combine.py` file. The `combine.py` file starts by creating an ArgumentParser so subtitles-combiner can be run from the command line. We'll ignore "packaging" and argument-parsing for now -- we can run our Rust program with `cargo run` and hard-code any arguments. Let's focus on the most important part: subtitle file parsing. 
@@ -43,7 +47,7 @@ subtitles-combiner defines these four functions
  - combine
  - write_combined_file
 
-We'll translate them starting these functions from the inside out. 
+We'll translate these functions in the order they are executed.
 
 #### Translating `read_lines`
 `read_lines` takes a single file, opens the file in read-mode ([`rt`](https://stackoverflow.com/a/23051095/1175496)) and yields a result for every nonempty line -- the `yield` means `read_lines` is a [generator](https://towardsdatascience.com/basics-of-python-generators-a47b3cab1a23). In fact the `subtitles-combiner` project is described as "an example of using generators for creating data processign pipelines", and links to [this presentation on Python Generator Hacking](http://www.slideshare.net/dabeaz/python-generator-hacking).
@@ -76,7 +80,9 @@ The Python `read_lines` function
 TODO Compare Python 2 and Python 3
 
 ##### Too lazy to be lazy
-The file object is iterable, but the `read_lines` Python function uses the `yield` keyword. In Python the `yield` keyword creates a generator. Generators can be iterated (because generators "implement the iterator protocol"). So **`read_lines` is a "generator function"**; calling `read_lines` immediately returns a generator-iterator. The code in the generator function ["only runs when called by `next(g)` or `g.send(v)`, and execution is suspended when `yield` is encountered"](https://stackoverflow.com/a/45727729/1175496). When should you use a generator? Use a generator when ["you don't know if you are *going to need all results*, or where you *don't want to allocate the memory for all results* at the same time."](https://stackoverflow.com/a/102632/1175496) So maybe we only want to translate the first 5 lines  of dialog in our .srt files -- no need to read the entire file for that! Does Rust have generators? Using the `yield` keyword technique in Rust requires using experimental/unstable features `#![feature(generators, generator_trait)]`. Instead of using the experimental Rust `yield` keyword, you could explicitly [implement the Iterator protocol (i.e. define the `fn next($mut self)` function)](https://stackoverflow.com/questions/16421033/lazy-sequence-generation-in-rust). Our Rust function already has something that implements the Iterator protocol, so I won't worry about translating to an explicit "generator" in Rust (too advanced for me!)
+The file object is iterable, but the `read_lines` Python function uses the `yield` keyword. In Python the `yield` keyword creates a generator. Generators can be iterated (because generators "implement the iterator protocol"). So **`read_lines` is a "generator function"**; calling `read_lines` immediately returns a generator-iterator. The code in the generator function ["only runs when called by `next(g)` or `g.send(v)`, and execution is suspended when `yield` is encountered"](https://stackoverflow.com/a/45727729/1175496). When should you use a generator? [Use a generator when](https://stackoverflow.com/a/102632/1175496)  "you don't know if you are *going to need all results*, or where you *don't want to allocate the memory for all results* at the same time." So maybe we only want to translate the first 5 lines  of dialog in our .srt files -- no need to read the entire file for that! 
+
+Does Rust have generators? Using the `yield` keyword technique in Rust requires [experimental/unstable features](https://stackoverflow.com/a/30279122/1175496) `#![feature(generators, generator_trait)]`. Instead of using the experimental Rust `yield` keyword, you could explicitly [implement the Iterator protocol (i.e. define the `fn next($mut self)` function)](https://stackoverflow.com/questions/16421033/lazy-sequence-generation-in-rust). Our Rust function already returns `Lines<BufRead>` which  implements the Iterator protocol, so I won't implement the `Iterator` in Rust (already implemented), and I won't try to use in Rust with the `yield` keyword (too advanced for me!)
 
 Instead I'll consider these Python alternatives to the existing `read_lines` "generator function"
 
@@ -120,6 +126,11 @@ def read_lines(sub_file):
 So the Python tendency for code to collapse onto a single line makes our generator expression and filter/map functions **less readable** -- I think the original generator function (using the `yield` keyword) is best.  These considerations should influence our Rust translation. The [Rust book talks about the concept of readability](https://doc.rust-lang.org/book/ch02-00-guessing-game-tutorial.html#handling-potential-failure-with-result): 
 
  > However, one long line is difficult to read, so it’s best to divide it. It’s often wise to **introduce a newline and other whitespace** to help break up long lines when you call a method with the .method_name() syntax.
+
+So let's revisit our function. With the helps of questions like ["most efficient way to filter Lines<BufReader<File>>"](https://users.rust-lang.org/t/most-efficient-way-to-filter-lines-bufreader-file-based-on-multiple-criteria/74141) and ["how to read, filter, and modify lines from a file"](https://stackoverflow.com/a/30329127/1175496), I came up with this translation:
+
+
+
 
 #### Translating `read_files`
 ...TODO...
