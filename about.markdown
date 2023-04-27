@@ -38,6 +38,7 @@ Some inspiration:
  - [Mapnificent](https://www.mapnificent.net/); visualize how far you can get in 30 minutes via public transit
  - Michael Freeman's site [mfviz](http://mfviz.com/)
  - Matthew Kay's [site](http://blog.mjskay.com/)
+ - Tania Allard's [site](https://www.trallard.dev/)
  - Duy Nguyen's [site](https://duyknguyen.com/profile/)
  - Andre Olieira's [site](https://andrepoliveira.com/blog/)
  - Mathieu Jouhet's [site](http://hello-mat.com/)
@@ -49,4 +50,5 @@ Some inspiration:
  - Ian Kettlewell's [code tools/games](https://ianjk.com/about/)
  - Kai Krause's [site](http://kai.sub.blue/)
  - Katie Russ/Linero's [work](https://github.com/katie7r) including [IPA Reader](http://ipa-reader.xyz/)
+ - Marianne Corvellec's [work](https://marianne-corvellec.appspot.com) 
 {% include social.html %}

@@ -1,6 +1,9 @@
----
 --- 
+front-matter: Necessary to process this scss file https://jekyllrb.com/docs/front-matter/
+---
 
+// front-matter: Necessary to process this scss file https://jekyllrb.com/docs/front-matter/
+/**/
 .bitmask-logo {
 
   display: block;
@@ -38,6 +41,7 @@ img[src*="headshot"] {
   float: right;
   margin: 1em;
 }
+
 /* minima */
 
 .grey {
@@ -178,46 +182,65 @@ p.header {
   opacity: .5;
 }
 
+
+.index-container {
+  display: flex;
+  flex-direction:column;
+
+  .index-message {
+    // margin-right: 2em;
+    // max-width: 600px;
+    margin-bottom:2em;
+  }
+  
+  .featured-works-grid {
+    flex:1;
+    // width: 400px;
+  }
+}
+
+
 .featured-works-grid--featured-work {
-  cursor:pointer;
+  cursor: pointer;
   width: 160px;
   height: 160px;
   // margin-right: 12px;
   // margin-bottom: 12px;
   // margin:6px;
   // the double-wides will have proportionately wider right-margin
-  margin-right:6px;
-  margin-bottom:6px;
+  margin-right: 6px;
+  margin-bottom: 6px;
   overflow: hidden;
-  position:relative;
+  position: relative;
 
-  float:left;
-  
+  float: left;
+
 
   .featured-works-grid--featured-background-image {
-    position:absolute;
-    top:0px;
-    left:0px;
-    bottom:0px;
-    right:0px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
     /* background-color: grey; */
     background-size: 100% auto;
     background-repeat: no-repeat;
     // opacity:1!important;
-    display:block!important;
+    display: block !important;
 
     transition: all .5s ease;
-    
+
   }
+
   /* [3] Finally, transforming the image when container gets hovered */
 
   &:hover {
-    .featured-works-grid--featured-background-image  {
+    .featured-works-grid--featured-background-image {
       transform: scale(1.25);
     }
 
-    .featured-works-grid--featured-title  {
-      background-color:rgba(0, 0, 0, 0.8);
+    .featured-works-grid--featured-title {
+      background-color: rgba(0, 0, 0, 0.8);
     }
   }
 
@@ -226,13 +249,13 @@ p.header {
     width: 320px;
   }
 
-  &.rotate {
-    
-    // 
-    // .featured-works-grid--featured-background-image  {
-    //   transform: rotate(10deg);
-    // }
-  }
+  // &.rotate {
+
+  //   // 
+  //   // .featured-works-grid--featured-background-image  {
+  //   //   transform: rotate(10deg);
+  //   // }
+  // }
 
   .featured-works-grid--featured-title {
     transition: all .5s ease;
@@ -246,9 +269,9 @@ p.header {
     padding: 10px;
     color: white;
 
-    line-height:18px;
-    font-size:18px;
-    overflow:hidden;
+    line-height: 18px;
+    font-size: 18px;
+    overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
@@ -257,9 +280,10 @@ p.header {
 
 .content {
   margin-right: 0px !important;
-  max-width: inherit!important;
+  max-width: inherit !important;
 }
-@media (max-width: 48em) {
+
+@media only screen and (max-width: 1000px) {
   .bitmask-logo {
     margin: auto;
   }
@@ -278,5 +302,18 @@ p.header {
 
   .social-media-list {
     margin: auto;
+  }
+  
+  .index-container{
+    // flex-direction:column;
+    // img {
+    //   max-width:100%;
+    //   width:100%;
+    // }
+    .index-message {
+      max-width:100%;
+      margin-right:0px;
+      margin-bottom:2em;
+    }
   }
 }

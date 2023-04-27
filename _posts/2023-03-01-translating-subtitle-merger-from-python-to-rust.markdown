@@ -4,7 +4,7 @@ title:  "Subtitle file exercise, translating Python to Rust"
 date:   2023-02-21 21:31:00 -0700
 excerpt_separator: <!--more-->
 ---
-I love the movie Crouching Tiger Hidden Dragon (CTHD), especially [the bar scene](https://www.youtube.com/watch?v=WZvzB7zG_HM&embeds_euri=https%3A%2F%2Ftwitter.com%2F&feature=emb_logo). I tried to find the screenplay for the movie in Mandarin. I found [this awesome GitHub project](https://github.com/gterzian/Subtitles-combiner) and started thinking...
+I love the movie Crouching Tiger Hidden Dragon (CTHD), especially [the bar scene](https://www.youtube.com/watch?v=WZvzB7zG_HM&embeds_euri=https%3A%2F%2Ftwitter.com%2F&feature=emb_logo). I tried to find the screenplay for the movie in Mandarin. I found [an awesome GitHub project (subtitle-combiner)](https://github.com/gterzian/Subtitles-combiner) and started thinking...
 <!--more-->
 
 subtitle-combiner is great because its Git repository includes the subtitle files (SRT files) for CTHD in many different languages, including Simplified Mandarin, Traditional Mandarin, Pinyin and English. The subtitles are a treasure, it's hard to find the CTHD screenplay in Mandarin; maybe we can create the transcript from the subtitles! 
