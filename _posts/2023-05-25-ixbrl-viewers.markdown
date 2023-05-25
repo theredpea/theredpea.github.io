@@ -17,6 +17,7 @@ The three types of renderers/iXBRL viewers, corresponding to three different are
 2. EdgarRenderer 
    - The SEC's **iXBRL viewer**
    - located in a [separate repo](https://github.com/Arelle/EdgarRenderer)
+   - described in [this video from XBRL US](https://www.youtube.com/watch?app=desktop&v=a24HIC46Ks4)
 3. ixbrl-viewer 
    - Workiva's ixbrlviewer
    - located in a [separate repo](https://github.com/Workiva/ixbrl-viewer)
