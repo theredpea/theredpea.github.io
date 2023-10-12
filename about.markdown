@@ -50,5 +50,6 @@ Some inspiration:
  - Ian Kettlewell's [code tools/games](https://ianjk.com/about/)
  - Kai Krause's [site](http://kai.sub.blue/)
  - Katie Russ/Linero's [work](https://github.com/katie7r) including [IPA Reader](http://ipa-reader.xyz/)
- - Marianne Corvellec's [work](https://marianne-corvellec.appspot.com) 
+ - Marianne Corvellec's [work](https://marianne-corvellec.appspot.com)
+ - kynd's [site](https://kyndinfo.notion.site/Index-ad8eba2882cd4a00b22ca18be39d1ecb?pvs=25)
 {% include social.html %}
