@@ -52,4 +52,5 @@ Some inspiration:
  - Katie Russ/Linero's [work](https://github.com/katie7r) including [IPA Reader](http://ipa-reader.xyz/)
  - Marianne Corvellec's [work](https://marianne-corvellec.appspot.com)
  - kynd's [site](https://kyndinfo.notion.site/Index-ad8eba2882cd4a00b22ca18be39d1ecb?pvs=25)
+ - DJ Rich's [site](https://truetheta.io/concepts/)
 {% include social.html %}
