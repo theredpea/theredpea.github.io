@@ -42,9 +42,10 @@ The error was:
 
 When I look closer, it's not complaining about the operator `?.` being used on a `KeyValuePair`, it's complaining about operator `?` (the [conditional/ternary operator?](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/conditional-operator), maybe the [nullability operator](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/nullable-value-types)?)
  - Maybe the error is because `?.` is executed right-to-left (does that mean it's [right-associative](https://en.wikipedia.org/wiki/Operator_associativity)?)
- - Is this error specific to [replit, the C# interpreter it is using?](https://replit.com/)?
+ - Is this error specific to [replit; maybe the C# interpreter it is using?](https://replit.com/)?
+ - TODO: Check a simpler case on replit; check the same case with different C# interpreter
 
-I fixed the error with parentheses, which is why I thought associativity was part of the problem...
+I fixed the error by adding parentheses, which is why I thought associativity was part of the problem...
 ```
 (SortedEventsByTicker // a SortedList<TKey,TValue>
             .GetValueOrDefault(EventTicker)
