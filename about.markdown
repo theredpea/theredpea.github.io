@@ -21,8 +21,10 @@ Here at bitmask I'll post about things like:
  - movies, recipes, etc
 
 I hope bitmask does better than my last few tries:
- - [Nate's XBRL site](http://xbrlnexus.appspot.com/#)
+ - Nate's XBRL site
+  - an [inactive Google App Engine app](http://xbrlnexus.appspot.com/) where I started learning web dev and planned to build a suite of XBRL tools
  - [Nate's XBRL Blog](http://xbrlnexus.wordpress.co/)
+  - a wordpress blog with the same kind of posts I plan to put here (coding, data-viz, personal interests, etc)
 
 Some inspiration:
  - Nadie Bremer's site [Visual Cinnamon](https://www.visualcinnamon.com/)
