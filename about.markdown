@@ -57,4 +57,5 @@ Some inspiration:
  - DJ Rich's [site](https://truetheta.io/concepts/)
  - Robyn Smith's [blog ("This Blog's NEAT")](https://www.thisblogsneat.com/)
  - Sam Rose's [site ("Sam Who")](https://samwho.dev/)
+ - [Nora Tindall](https://nora.codes/)
 {% include social.html %}
