@@ -58,4 +58,6 @@ Some inspiration:
  - Robyn Smith's [blog ("This Blog's NEAT")](https://www.thisblogsneat.com/)
  - Sam Rose's [site ("Sam Who")](https://samwho.dev/)
  - [Nora Tindall](https://nora.codes/)
+ - [Bret Victor's Learnable Programming](https://worrydream.com/LearnableProgramming/)
+ - [Amjad Masad](https://amasad.me/)
 {% include social.html %}
