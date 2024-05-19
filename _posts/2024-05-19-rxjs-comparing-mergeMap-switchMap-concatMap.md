@@ -117,4 +117,5 @@ I created the marble diagram above using the input below:
 
 
 <sup>1</sup>I know about the new async/state-management technique with [signals](https://angular.io/guide/signals), but I guess Observables still have a place; more on [signals vs observables](https://www.builder.io/blog/signals-vs-observables).
+
 <sup>2</sup>An observable within an observable? That's [a "higher-order" observable!](https://rxjs.dev/guide/higher-order-observables)
