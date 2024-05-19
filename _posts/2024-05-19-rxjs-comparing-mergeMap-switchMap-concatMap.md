@@ -16,7 +16,7 @@ If you pipe it into  `mergeMap` or `switchMap` or `concatMap`, which in turn yie
  - `switchMap` emits when any of the inputs emit in order, which certain emissions will be delayed to match the order of the 1st-order observable
    - notice how the first 50 waits until the last 30 is emitted...
 
-![marble_diagram_mergeMap_vs_switchMap_vs_concatMap](https://github.com/theredpea/theredpea.github.io/assets/1369723/97355881-2140-4c53-b558-5a6debddfb98)---
+![marble_diagram_mergeMap_vs_switchMap_vs_concatMap](https://github.com/theredpea/theredpea.github.io/assets/1369723/97355881-2140-4c53-b558-5a6debddfb98)
 
 # Marble Diagrams with Swirly
 Design your own marble diagram with [https://swirly.dev/](https://swirly.dev/#), or check out the [Swirly Github project here](https://github.com/timdp/swirly)
