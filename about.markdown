@@ -60,4 +60,5 @@ Some inspiration:
  - [Nora Tindall](https://nora.codes/)
  - [Bret Victor's Learnable Programming](https://worrydream.com/LearnableProgramming/)
  - [Amjad Masad](https://amasad.me/)
+ - Miska Knapek's [site](https://miska.org/)
 {% include social.html %}
