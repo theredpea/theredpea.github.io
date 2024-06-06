@@ -61,4 +61,5 @@ Some inspiration:
  - [Bret Victor's Learnable Programming](https://worrydream.com/LearnableProgramming/)
  - [Amjad Masad](https://amasad.me/)
  - Miska Knapek's [site](https://miska.org/)
+ - [Bartosz Ciechanowski's interactive explanation/visualization of a mechanical watch](https://ciechanow.ski/mechanical-watch/)
 {% include social.html %}
