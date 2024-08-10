@@ -63,4 +63,5 @@ Some inspiration:
  - Miska Knapek's [site](https://miska.org/)
  - [Bartosz Ciechanowski's interactive explanation/visualization of a mechanical watch](https://ciechanow.ski/mechanical-watch/)
  - David Aerne/Elastiq Ltd.'s [site](https://bento.me/meodai); an "interaction developer"
+ - [Robin Neufeld's blog](https://metavee.github.io/blog/)
 {% include social.html %}
