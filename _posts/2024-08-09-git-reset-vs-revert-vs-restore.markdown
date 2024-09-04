@@ -17,6 +17,6 @@ The github /`git` [documentation page says this](https://git-scm.com/docs/git#_r
 Nate should revisit this post to clarify:
  - `revert` vs `restore` specifically
    - the [documentation for `git revert` says](https://git-scm.com/docs/git-revert#_description) (emphasis added):
-   - > If you want to **extract specific files** as they were in another commit, you should see git-restore[1], specifically the --source option.
+   - > If you want to **extract specific files** as they were in another commit, you should see `git-restore`, specifically the --source option.
  - and use a single  hypothetical developer/codebase that demonstrates all three commands with three different scenarios
 
