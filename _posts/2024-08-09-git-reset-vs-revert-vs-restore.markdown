@@ -10,9 +10,9 @@ I forgot the git command to restore a single file to a specific commit, modifyin
 # The Github Documentation Page
 The github /`git` [documentation page says this](https://git-scm.com/docs/git#_reset_restore_and_revert):
 
- > git-revert[1] is about making a new commit that reverts the changes made by other commits.
- > git-restore[1] is about restoring files in the working tree from either the index or another commit. This command does not update your branch. The command can also be used to restore files in the index from another commit.
- > git-reset[1] is about updating your branch, moving the tip in order to add or remove commits from the branch. This operation changes the commit history.
+ > - `git-revert` is about making a new commit that reverts the changes made by other commits.
+ > - `git-restore` is about restoring files in the working tree from either the index or another commit. This command does not update your branch. The command can also be used to restore files in the index from another commit.
+ > - `git-reset` is about updating your branch, moving the tip in order to add or remove commits from the branch. This operation changes the commit history.
 
 Nate should revisit this post to clarify:
  - `revert` vs `restore` specifically
