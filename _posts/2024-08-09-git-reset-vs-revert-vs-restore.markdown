@@ -20,3 +20,7 @@ Nate should revisit this post to clarify:
    - > If you want to **extract specific files** as they were in another commit, you should see `git-restore`, specifically the --source option.
  - and use a single  hypothetical developer/codebase that demonstrates all three commands with three different scenarios
 
+Other helpful links
+ - [what-is-git-restore-and-how-is-it-different-from-git-reset](https://stackoverflow.com/questions/58003030/what-is-git-restore-and-how-is-it-different-from-git-reset)
+ - [difference-between-git-restore-and-git-revert](https://stackoverflow.com/questions/63661460/difference-between-git-restore-and-git-revert)
+ - [how-to-undo-changes-in-git-using-reset-revert-and-restore](https://blog.git-init.com/how-to-undo-changes-in-git-using-reset-revert-and-restore/)
