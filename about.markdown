@@ -64,5 +64,6 @@ Some inspiration:
  - [Bartosz Ciechanowski's interactive explanation/visualization of a mechanical watch](https://ciechanow.ski/mechanical-watch/)
  - David Aerne/Elastiq Ltd.'s [site](https://bento.me/meodai); an "interaction developer"
  - [Robin Neufeld's blog](https://metavee.github.io/blog/)
- - [Amelia Wattenberger's page](https://wattenberger.com/) 
+ - [Amelia Wattenberger's page](https://wattenberger.com/)
+ - [Kat ⊷ the Poet Engineer](https://t.co/PxPJPpSBVQ)
 {% include social.html %}
