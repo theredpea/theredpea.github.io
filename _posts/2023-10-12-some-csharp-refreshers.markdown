@@ -24,9 +24,30 @@ Some examples:
 TODO
 ```
 
+Javascript also has the ["*nullish*  coalescing"](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing) and ["nullish coalescing assignment"](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_assignment) operators. 
+
+Javascript calls it "nullish" because Javascript `null` is distinct from Javascript `undfined`, Javascripts "nullish coalescing" operator works in both scenarios (emphasis added):
+ > ...when its left-hand side operand is **null or undefined**...
+
 # Null-Conditional Operator `?.`
 A variation on the [`.` member access operator](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/member-access-operators)
 It can also be used for index access operator `[...]` becomes `?[...]`
+
+The C# "null-conditional operator" is calld the ["optional chaining" operator in Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining).
+
+Both of the objects short-circuit -- if any object higher in the chain is null, it ignores all subsequent operators.
+In this Javascript example, I don't use the optional chaining operator on `p2` or `p3` because using it on p1 is sufficient.
+
+If  `p1` is not defined, this expression returns `'name'` without erroring about `p2` and `p3` nonexistence.
+``` window.p1?.p2.p3 ?? 'name' ```
+
+However, if `p1` *did* exist, but then its `p2` was not defined, the above expression would cause an `TypeError`:.
+
+```
+window.p1 = {};
+window.p1?.p2.p3 ?? 'name'
+ > Uncaught TypeError: Cannot read properties of undefined (reading 'p3')
+```
 
 ## Error with Chaining Null-Conditional
 I thought this operator couldn't be used on every type. I got an error on this line:
