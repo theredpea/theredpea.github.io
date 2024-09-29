@@ -29,11 +29,12 @@ Javascript also has the ["*nullish*  coalescing"](https://developer.mozilla.org/
 Javascript calls it "nullish" because Javascript `null` is distinct from Javascript `undfined`, Javascripts "nullish coalescing" operator works in both scenarios (emphasis added):
  > ...when its left-hand side operand is **null or undefined**...
 
-# Null-Conditional Operator `?.`
+# Null-Conditional Operator `?.` (the "Elvis Operator")
 A variation on the [`.` member access operator](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/member-access-operators)
 It can also be used for index access operator `[...]` becomes `?[...]`
 
-The C# "null-conditional operator" is calld the ["optional chaining" operator in Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining).
+## Comparison with Javascript
+The C# "null-conditional operator" is called the ["optional chaining" operator in Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining).
 
 Both of the objects short-circuit -- if any object higher in the chain is null, it ignores all subsequent operators.
 In this Javascript example, I don't use the optional chaining operator on `p2` or `p3` because using it on p1 is sufficient.
@@ -77,10 +78,41 @@ I fixed the error by adding parentheses, which is why I thought associativity wa
 ## Short-Circuiting
 It's also interesting to learn that `?.` is ["short-circuiting"](https://stackoverflow.com/a/48831683/1175496).
  - Does short-circuiting mean I can avoid "chaining" the operator like `A?.B?.DoSomething(C)`, can I just do `A?.B.DoSomething(C)`?
-   - No, I don't think so.
- - Note [short-circuiting](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/member-access-operators#null-conditional-operators--and-) is explicitly broken using the parentheses as I did above
+   - Yes, can do that, it means if A is null it won't attempt to access `B` or `C` or anything else to the right of the operator:
+   - > If `A` might be null but `B` and `C` wouldn't be null if `A` isn't null, you only need to apply the null-conditional operator to A:
+   -  > `A?.B.C();`
+   -  Note this part particularly: if "`B` and `C` wouldn't be null"
+ -  Don't get confused, **short-circuiting** does not mean there are "implied" null conditional operators. There is no implied nullish operator after the `B`; these are *not* equivalent: `A?.B.C();` and `A?.B?.C();`
+    -  In other words, if `B` or `C` were null, it would fail.
+ -Also note [short-circuiting](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/member-access-operators#null-conditional-operators--and-) is interrupted with parentheses:
    - > if the chained member access is interrupted, for example by parentheses as in (A?.B).C(), short-circuiting doesn't happen.
-     
+   - So these are not equivalent either: `A?.B.C();` and  `(A?.B).C();`
+
+Also compare C# and Javascript
+C# has "null conditional" operators for both "members" and "elements": a member access (`?.`) or element access (`?[]`)
+C# does *not* have a null conditional operator for *methods*, like `?.(...)` or `?(...)`
+
+[Consider this code...](https://dotnetfiddle.net/43ZdNi)
+```
+StringMaker s = null;
+// this fails with a syntax error and "Compilation error: 'method group' cannot be made nullable."
+Console.WriteLine(s?.MakeString?.());
+// this line fails with "Identifier expected" and "Compilation error: 'Program.StringMaker.MakeString()' is a method, which is not valid in the given context"
+Console.WriteLine(s?.MakeString?());
+```
+
+Javascript's operator works on functions/methods, too:
+```
+obj.val?.prop
+obj.val?.[expr]
+obj.func?.(args)
+```
+
+As explained in the [documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining#optional_chaining_with_function_calls):
+ > You can use optional chaining when attempting to call a method which may not exist
+
+This makes sense, I guess C# would never have null methods, right? It might have [null delegates though](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/member-access-operators#thread-safe-delegate-invocation)
+
 ## `LastOrDefault`
 
 More on the [`LastOrDefault` method here](https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.lastordefault?view=net-7.0)
