@@ -1,0 +1,70 @@
+html,
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+body {
+  background-color: lightblue;
+  background-color: #49a3d5;
+  /*   perspective: 1000px ; */
+  perspective: 3000px;
+  --face-padding: 10px;
+  --face-size: 300px;
+  --face-shift: calc(var(--face-size) / -7.4);
+}
+input {
+  z-index: 900;
+  position: absolute;
+}
+
+#cardRotateX {
+  top: 30px;
+}
+.card {
+  display: flex;
+  margin: auto;
+  transform-style: preserve-3d;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /*   background:red; */
+}
+.face {
+  /*   flex:1; */
+  width: var(--face-size);
+  height: var(--face-size);
+  background-color: white;
+  background-image: url(https://i.imgur.com/zWgB00x.png);
+  background-size: auto calc(100% - 20px);
+  background-position: 12px var(--face-padding);
+  background-color: white;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  margin-left: var(--face-shift);
+}
+.face-1,
+.face-3 {
+  transform: rotateY(-30deg);
+  background-color: rgb(200, 230, 230);
+}
+.face-2,
+.face-4 {
+  transform: rotateY(30deg);
+}
+.face-1 {
+  background-position: calc(0% + 32px) var(--face-padding);
+}
+.face-2 {
+  background-position: 33% var(--face-padding);
+}
+
+.face-3 {
+  background-position: calc(67% - 5px) var(--face-padding);
+}
+
+.face-4 {
+  background-position: calc(100% - 25px) var(--face-padding);
+}
