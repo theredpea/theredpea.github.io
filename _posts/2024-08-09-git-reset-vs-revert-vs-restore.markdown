@@ -20,6 +20,16 @@ Nate should revisit this post to clarify:
    - > If you want to **extract specific files** as they were in another commit, you should see `git-restore`, specifically the --source option.
  - and use a single  hypothetical developer/codebase that demonstrates all three commands with three different scenarios
 
+
+## `checkout` vs `restore`
+Some [confusion about `checkout` vs `restore`](https://stackoverflow.com/a/61130521/1175496). 
+Seems like  `restore` and `switch` are subsets of `checkout` functionality.
+ 
+ - So if my question is:  `revert` vs `restore` vs `reset` 
+ - And  `restore` is related to `checkout`
+ - Then a similar question is , [the difference between  `revert` vs **`checkout`** vs  `reset`](https://stackoverflow.com/questions/8358035/whats-the-difference-between-git-revert-checkout-and-reset)
+
+
 Other helpful links
  - [what-is-git-restore-and-how-is-it-different-from-git-reset](https://stackoverflow.com/questions/58003030/what-is-git-restore-and-how-is-it-different-from-git-reset)
  - [difference-between-git-restore-and-git-revert](https://stackoverflow.com/questions/63661460/difference-between-git-restore-and-git-revert)
