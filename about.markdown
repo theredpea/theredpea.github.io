@@ -4,7 +4,8 @@ title: About
 permalink: /about/
 ---
 
-![Nate Anderson personal pic](/assets/images/headshot/nate.jpg "Nate Anderson personal pic")
+<img src="/assets/images/headshot/nate.jpg" style="height:200px;float:right;border-radius:100px;margin:1em;"/>
+<!--- ![Nate Anderson personal pic](/assets/images/headshot/nate.jpg "Nate Anderson personal pic") ---> 
 
 
 Hi, I'm Nate Anderson (full name Nathaniel Muir Anderson). 
