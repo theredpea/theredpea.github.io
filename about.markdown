@@ -10,7 +10,7 @@ permalink: /about/
 
 Hi, I'm Nate Anderson (full name Nathaniel Muir Anderson). 
 
-I'm a web-developer originally from Kāneʻohe, Hawaiʻi. I live in Englewood, Colorado with my husband, 2 dogs, and 1 cat.
+I'm a web-developer originally from Kāneʻohe, Hawaiʻi. I live in Englewood, Colorado with my husband, our son, and 2 dogs.
 
 I graduated from USC where I studied Interactive Media and Accounting. These days I'm interested in making fun apps and interesting projects (especially data visualization).
 
@@ -67,4 +67,5 @@ Some inspiration:
  - [Robin Neufeld's blog](https://metavee.github.io/blog/)
  - [Amelia Wattenberger's page](https://wattenberger.com/)
  - [Kat ⊷ the Poet Engineer](https://t.co/PxPJPpSBVQ)
+ - [Colin Dias Miller's](https://www.colindm.com/) site & projects
 {% include social.html %}
