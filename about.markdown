@@ -67,5 +67,7 @@ Some inspiration:
  - [Robin Neufeld's blog](https://metavee.github.io/blog/)
  - [Amelia Wattenberger's page](https://wattenberger.com/)
  - [Kat ⊷ the Poet Engineer](https://t.co/PxPJPpSBVQ)
- - [Colin Dias Miller's](https://www.colindm.com/) site & projects
+ - [Colin Dias Miller's](https://www.colindm.com/) site & projects (including [Subway Builder](https://www.subwaybuilder.com/))
+ - [JackieIs.Online](https://jackieis.online/) (Jackie Liu's site)
+ - 
 {% include social.html %}
