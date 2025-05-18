@@ -71,4 +71,10 @@ Some inspiration:
  - [Colin Dias Miller's](https://www.colindm.com/) site & projects (including [Subway Builder](https://www.subwaybuilder.com/))
  - [JackieIs.Online](https://jackieis.online/) (Jackie Liu's site)
  - [Amit Patel's site Red Blob Games](https://www.redblobgames.com/)
+
+A list of CS self-learning resources:
+  - https://teachyourselfcs.com/#programming
+    - https://sarabander.github.io/sicp/html/index.xhtml
+  - https://github.com/ossu/computer-science
+  - https://www.nand2tetris.org/
 {% include social.html %}
