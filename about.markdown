@@ -70,5 +70,5 @@ Some inspiration:
  - [Kat ⊷ the Poet Engineer](https://t.co/PxPJPpSBVQ)
  - [Colin Dias Miller's](https://www.colindm.com/) site & projects (including [Subway Builder](https://www.subwaybuilder.com/))
  - [JackieIs.Online](https://jackieis.online/) (Jackie Liu's site)
- - 
+ - [Amit Patel's site Red Blob Games](https://www.redblobgames.com/)
 {% include social.html %}
