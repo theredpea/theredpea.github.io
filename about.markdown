@@ -72,6 +72,7 @@ Some inspiration:
  - [JackieIs.Online](https://jackieis.online/) (Jackie Liu's site)
  - [Amit Patel's site Red Blob Games](https://www.redblobgames.com/)
  - [Imad's website](https://imadr.me/)
+ - [Jacob Yates' website](https://jake.vision/)
 
 A list of CS self-learning resources:
   - https://teachyourselfcs.com/#programming
