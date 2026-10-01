@@ -73,6 +73,7 @@ Some inspiration:
  - [Amit Patel's site Red Blob Games](https://www.redblobgames.com/)
  - [Imad's website](https://imadr.me/)
  - [Jacob Yates' website](https://jake.vision/)
+ - [Elliot.website](https://elliot.website/)
 
 A list of CS self-learning resources:
   - https://teachyourselfcs.com/#programming
